@@ -6,7 +6,7 @@ using UnityEngine;
 public class PlayerCtrl : MonoBehaviour
 {
     private FirstCamera rotateToMouse; // 마우스 이동으로 카메라 회전
-    private CharacterController characterCtrl;
+    private CharacterController characterCtrl; //캐릭터 이동 시키는 컴포넌트
 
     [SerializeField] private LayerMask keyLayer; //아이템의 레이어 마스크
 
@@ -46,10 +46,10 @@ public class PlayerCtrl : MonoBehaviour
 
     void Update()
     {
-        isCrouch = Input.GetKey(crouchKey); //Boolen 형식으로 사용 (앉으면 true 서있으면 false)
+        isCrouch = Input.GetKey(crouchKey); //Boolean 형식?으로 사용 (앉으면 true 서있으면 false)
         RotateMouse(); //플레이어 회전
         MovePlayer(); //마우스 이동
-        getGravity(); //플레이어 중력 적용
+        setGravity(); //플레이어 중력 적용
     }
 
     /// <summary>
@@ -103,7 +103,7 @@ public class PlayerCtrl : MonoBehaviour
     /// <summary>
     /// 플레이어의 중력 함수
     /// </summary>
-    void getGravity()
+    void setGravity()
     {
         _velocity.y += gravity * Time.deltaTime;
         characterCtrl.Move(_velocity);
@@ -114,6 +114,8 @@ public class PlayerCtrl : MonoBehaviour
     /// </summary>
     void RotateMouse()
     {
+
+
         float mouseX = Input.GetAxis("Mouse X");
         float mouseY = Input.GetAxis("Mouse Y");
         rotateToMouse.UpdateRotate(mouseX, mouseY);
@@ -135,7 +137,7 @@ public class PlayerCtrl : MonoBehaviour
         }
 
         characterCtrl.Move(moveForce * Time.deltaTime);
-        MoveTo(new Vector3(x, 0, z));
+        MoveTo(new Vector3(x, 0, z).normalized);
     }
 
     /// <summary>
