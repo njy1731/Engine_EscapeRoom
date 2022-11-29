@@ -5,15 +5,11 @@ using UnityEngine;
 [RequireComponent(typeof(CharacterController))]
 public class PlayerCtrl : MonoBehaviour
 {
-    private FirstCamera rotateToMouse; // 마우스 이동으로 카메라 회전
     private CharacterController characterCtrl; //캐릭터 이동 시키는 컴포넌트
-
-    [SerializeField] private LayerMask keyLayer; //아이템의 레이어 마스크
+    private Status status; //캐릭터의 스텟을 받아옴
 
     private KeyCode crouchKey = KeyCode.LeftControl; //키 할당
-    private KeyCode runKey = KeyCode.LeftShift;
-
-    private Status status; //캐릭터의 스텟을 받아옴
+    private KeyCode runKey = KeyCode.LeftShift; //키 할당
 
     [SerializeField] private float moveSpd; //플레이어의 이동속도
     private Vector3 moveForce; //플레이어 이동에 쓰이는 Vector
@@ -39,15 +35,20 @@ public class PlayerCtrl : MonoBehaviour
         get => moveSpd;
     }
 
-    void Start()
+    /// <summary>
+    /// 캐싱
+    /// </summary>
+    void Awake()
     {
         characterCtrl = GetComponent<CharacterController>();
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+        status = GetComponent<Status>();
     }
 
     void Update()
     {
         isCrouch = Input.GetKey(crouchKey); //Boolean 형식?으로 사용 (앉으면 true 서있으면 false)
-        RotateMouse(); //플레이어 회전
         MovePlayer(); //마우스 이동
         setGravity(); //플레이어 중력 적용
     }
@@ -79,28 +80,6 @@ public class PlayerCtrl : MonoBehaviour
     }
 
     /// <summary>
-    /// 움직이는 로직 함수
-    /// </summary>
-    /// <param name="direction">현재 가려는 방향</param>
-    public void MoveTo(Vector3 direction)
-    {
-        direction = transform.rotation * new Vector3(direction.x, 0, direction.z);
-
-        moveForce = new Vector3(direction.x * moveSpd, moveForce.y, direction.z * moveSpd);
-    }
-
-    /// <summary>
-    /// 캐싱
-    /// </summary>
-    void Awake()
-    {
-        rotateToMouse = GetComponent<FirstCamera>();
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
-        status = GetComponent<Status>();
-    }
-
-    /// <summary>
     /// 플레이어의 중력 함수
     /// </summary>
     void setGravity()
@@ -110,15 +89,14 @@ public class PlayerCtrl : MonoBehaviour
     }
 
     /// <summary>
-    /// 플레이어가 마우스를 움직일때 화면을 움직여주는 함수
+    /// 움직이는 로직 함수
     /// </summary>
-    void RotateMouse()
+    /// <param name="direction">현재 가려는 방향</param>
+    public void MoveTo(Vector3 direction)
     {
+        direction = transform.rotation * new Vector3(direction.x, 0, direction.z);
 
-
-        float mouseX = Input.GetAxis("Mouse X");
-        float mouseY = Input.GetAxis("Mouse Y");
-        rotateToMouse.UpdateRotate(mouseX, mouseY);
+        moveForce = new Vector3(direction.x * moveSpd, moveForce.y, direction.z * moveSpd);
     }
 
     /// <summary>
@@ -138,25 +116,5 @@ public class PlayerCtrl : MonoBehaviour
 
         characterCtrl.Move(moveForce * Time.deltaTime);
         MoveTo(new Vector3(x, 0, z).normalized);
-    }
-
-    /// <summary>
-    /// 아이템을 레이캐스트로 받아서 확인하는 함수
-    /// </summary>
-    void CheckItem()
-    {
-        RaycastHit raycast;
-        if (Physics.Raycast(transform.position, transform.forward, out raycast, 3f, keyLayer))
-        {
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-
-            }
-        }
-
-        else
-        {
-
-        }
     }
 }
