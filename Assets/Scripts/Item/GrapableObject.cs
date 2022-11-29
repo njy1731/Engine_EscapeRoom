@@ -15,13 +15,24 @@ public class GrapableObject : MonoBehaviour
     public void GrabItem(Transform objTransform)
     {
         this.objTransform = objTransform;
+        Objrigid.useGravity = false;
+        Objrigid.isKinematic = true;
+    }
+
+    public void DropItem()
+    {
+        this.objTransform = null;
+        Objrigid.useGravity = true;
+        Objrigid.isKinematic = false;
     }
 
     private void FixedUpdate()
     {
         if(objTransform != null)
         {
-            Objrigid.MovePosition(objTransform.position);
+            float lerpSpd = 10f;
+            Vector3 newPosition = Vector3.Lerp(transform.position, objTransform.position, Time.deltaTime * lerpSpd);
+            Objrigid.MovePosition(newPosition);
         }
     }
 }

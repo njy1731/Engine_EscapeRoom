@@ -8,37 +8,37 @@ public class PickUpCtrl : MonoBehaviour
     [SerializeField] private Transform objectGrabPoint;
     [SerializeField] private LayerMask ItemLayer;
 
-    void Start()
-    {
-        
-    }
+    private GrapableObject objGrab;
 
-    void Update()
+    private void Update()
     {
         CheckItem();
     }
 
     /// <summary>
-    /// 아이템을 레이캐스트로 받아서 확인하는 함수
+    /// 아이템을 레이캐스트로 받아서 움직이는 함수
     /// </summary>
     void CheckItem()
     {
-        float pickUpDistance = 2f;
-        RaycastHit hit;
-        if (Physics.Raycast(playerCam.position, playerCam.forward, out hit, pickUpDistance, ItemLayer))
+        if (Input.GetMouseButtonDown(0))
         {
-            if (Input.GetKeyDown(KeyCode.E))
+            if (objGrab == null)
             {
-                if(hit.transform.TryGetComponent(out GrapableObject objGrab))
+                float pickUpDistance = 10f;
+                if (Physics.Raycast(playerCam.position, playerCam.forward, out RaycastHit hit, pickUpDistance, ItemLayer))
                 {
-                    objGrab.GrabItem(objectGrabPoint);
+                    if (hit.transform.TryGetComponent(out objGrab))
+                    {
+                        objGrab.GrabItem(objectGrabPoint);
+                    }
                 }
             }
-        }
 
-        else
-        {
-
+            else
+            {
+                objGrab.DropItem();
+                objGrab = null;
+            }
         }
     }
 }
