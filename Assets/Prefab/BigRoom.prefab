@@ -3326,8 +3326,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bdc3dd6ebbfb894b8dd3cf0c8dfb40e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currTime: 0
   enemy: {fileID: 5717197757904027221, guid: 0cb176ff67948574385a25f37503be79, type: 3}
   spawnPos: {x: 0, y: 0, z: 0}
+  spawnTime: 90
 --- !u!1 &5419237851434295367
 GameObject:
   m_ObjectHideFlags: 0

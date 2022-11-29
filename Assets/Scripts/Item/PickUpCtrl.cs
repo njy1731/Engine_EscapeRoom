@@ -24,7 +24,7 @@ public class PickUpCtrl : MonoBehaviour
         {
             if (objGrab == null)
             {
-                float pickUpDistance = 10f;
+                float pickUpDistance = 2f;
                 if (Physics.Raycast(playerCam.position, playerCam.forward, out RaycastHit hit, pickUpDistance, ItemLayer))
                 {
                     if (hit.transform.TryGetComponent(out objGrab))

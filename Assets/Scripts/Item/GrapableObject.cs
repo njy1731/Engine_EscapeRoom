@@ -30,7 +30,7 @@ public class GrapableObject : MonoBehaviour
     {
         if(objTransform != null)
         {
-            float lerpSpd = 10f;
+            float lerpSpd = 15f;
             Vector3 newPosition = Vector3.Lerp(transform.position, objTransform.position, Time.deltaTime * lerpSpd);
             Objrigid.MovePosition(newPosition);
         }
