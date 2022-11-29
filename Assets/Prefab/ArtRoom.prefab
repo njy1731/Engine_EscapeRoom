@@ -2386,6 +2386,14 @@ PrefabInstance:
       propertyPath: m_InnerSpotAngle
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 699873141607341566, guid: 19d076eeb6121fb4995c31db3714092e, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 699873141607341566, guid: 19d076eeb6121fb4995c31db3714092e, type: 3}
+      propertyPath: m_Shadows.m_Strength
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4505360168566150790, guid: 19d076eeb6121fb4995c31db3714092e, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.09

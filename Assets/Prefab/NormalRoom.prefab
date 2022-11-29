@@ -2049,6 +2049,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3913870500537315387, guid: 686234ec1c7e2a64ca2e094bd598b46e, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3913870500537315387, guid: 686234ec1c7e2a64ca2e094bd598b46e, type: 3}
+      propertyPath: m_Shadows.m_Strength
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 8329008355359057771, guid: 686234ec1c7e2a64ca2e094bd598b46e, type: 3}
       propertyPath: m_Name
       value: Light (3)
@@ -2185,6 +2193,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3913870500537315387, guid: 686234ec1c7e2a64ca2e094bd598b46e, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3913870500537315387, guid: 686234ec1c7e2a64ca2e094bd598b46e, type: 3}
+      propertyPath: m_Shadows.m_Strength
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 8329008355359057771, guid: 686234ec1c7e2a64ca2e094bd598b46e, type: 3}
       propertyPath: m_Name
       value: Light (1)
@@ -2308,6 +2324,14 @@ PrefabInstance:
     - target: {fileID: 3462163256527296887, guid: 686234ec1c7e2a64ca2e094bd598b46e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3913870500537315387, guid: 686234ec1c7e2a64ca2e094bd598b46e, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3913870500537315387, guid: 686234ec1c7e2a64ca2e094bd598b46e, type: 3}
+      propertyPath: m_Shadows.m_Strength
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8329008355359057771, guid: 686234ec1c7e2a64ca2e094bd598b46e, type: 3}
       propertyPath: m_Name
@@ -2589,6 +2613,22 @@ PrefabInstance:
       propertyPath: m_InnerSpotAngle
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 699873141607341566, guid: 19d076eeb6121fb4995c31db3714092e, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 699873141607341566, guid: 19d076eeb6121fb4995c31db3714092e, type: 3}
+      propertyPath: m_Shadows.m_Strength
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1298676088380398788, guid: 19d076eeb6121fb4995c31db3714092e, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1298676088380398788, guid: 19d076eeb6121fb4995c31db3714092e, type: 3}
+      propertyPath: m_Shadows.m_Strength
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4505360168566150790, guid: 19d076eeb6121fb4995c31db3714092e, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
@@ -2728,6 +2768,22 @@ PrefabInstance:
     - target: {fileID: 3462163256527296887, guid: 686234ec1c7e2a64ca2e094bd598b46e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3913870500537315387, guid: 686234ec1c7e2a64ca2e094bd598b46e, type: 3}
+      propertyPath: m_SpotAngle
+      value: 110
+      objectReference: {fileID: 0}
+    - target: {fileID: 3913870500537315387, guid: 686234ec1c7e2a64ca2e094bd598b46e, type: 3}
+      propertyPath: m_InnerSpotAngle
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3913870500537315387, guid: 686234ec1c7e2a64ca2e094bd598b46e, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3913870500537315387, guid: 686234ec1c7e2a64ca2e094bd598b46e, type: 3}
+      propertyPath: m_Shadows.m_Strength
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8329008355359057771, guid: 686234ec1c7e2a64ca2e094bd598b46e, type: 3}
       propertyPath: m_Name
