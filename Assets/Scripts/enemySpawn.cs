@@ -5,31 +5,33 @@ using UnityEngine;
 public class enemySpawn : MonoBehaviour
 {
     [SerializeField]
-    private float currTime;
+    private int waitTime = 10;
     public GameObject enemy;
     public Vector3 spawnPos;
-    [SerializeField]
-    private int spawnTime = 90;
+
     void Start()
     {
         
         spawnPos = this.gameObject.transform.position;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        currTime += Time.deltaTime;
-        if (currTime > spawnTime)
+        StartCoroutine(spawnEnemy());
+    }
+
+    IEnumerator spawnEnemy()
+    {
+        yield return new WaitForSeconds(waitTime);
+        int spawnRate = Random.Range(0, 10);
+        Debug.Log(",");
+        
+        if (spawnRate == 0)
         {
             GameObject instance = Instantiate(enemy, spawnPos, Quaternion.identity);
-            
-            currTime = 0;
-            if (spawnTime >= 40)
-            {
-                spawnTime -= 10;
-                return;
-            }
         }
+        
     }
 }

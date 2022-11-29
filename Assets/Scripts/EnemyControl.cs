@@ -9,12 +9,15 @@ public class EnemyControl : MonoBehaviour
     [SerializeField]
     private int damage;
     [SerializeField]
+    private GameObject[] Light;
+    [SerializeField]
     private Vector3 target;
     [SerializeField]
     private float Speed;
     void Start()
     {
         point = GameObject.FindGameObjectWithTag("endTarget");
+        Light = GameObject.FindGameObjectsWithTag("Light");
         target = point.transform.position;
     }
 
@@ -24,6 +27,17 @@ public class EnemyControl : MonoBehaviour
         if(this.gameObject.transform.position == target)
         {
             Destroy(this.gameObject);
+        }
+
+        LightOff();
+
+    }
+
+    void LightOff()
+    {
+        foreach(GameObject item in Light)
+        {
+            item.SetActive(false);
         }
     }
 }
