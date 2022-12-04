@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class GrapableObject : MonoBehaviour
 {
-    private Rigidbody Objrigid;
-    private Transform objTransform;
+    private Rigidbody Objrigid; //직접적 움직임을 가하는 RigidBody 변수
+    private Transform objTransform; //물체의 이동에 쓰는 변수
 
     private void Start()
     {
@@ -24,6 +24,19 @@ public class GrapableObject : MonoBehaviour
         this.objTransform = null;
         Objrigid.useGravity = true;
         Objrigid.isKinematic = false;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (!(other.tag == "Door"))
+        {
+
+        }
+
+        else
+        {
+
+        }
     }
 
     private void FixedUpdate()
