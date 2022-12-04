@@ -7,6 +7,8 @@ public class EnemyControl : MonoBehaviour
     [SerializeField]
     private GameObject point;
     [SerializeField]
+    private GameObject Player;
+    [SerializeField]
     private int damage;
     [SerializeField]
     private GameObject[] Light;
@@ -14,10 +16,15 @@ public class EnemyControl : MonoBehaviour
     private Vector3 target;
     [SerializeField]
     private float Speed;
+    [SerializeField]
+    private Vector3 playerPos;
     void Start()
     {
         point = GameObject.FindGameObjectWithTag("endTarget");
         Light = GameObject.FindGameObjectsWithTag("Light");
+        Player = GameObject.FindGameObjectWithTag("Player");
+
+        playerPos = Player.transform.position;
         target = point.transform.position;
     }
 
@@ -31,6 +38,7 @@ public class EnemyControl : MonoBehaviour
 
         LightOff();
 
+        transform.LookAt(playerPos);
     }
 
     void LightOff()
