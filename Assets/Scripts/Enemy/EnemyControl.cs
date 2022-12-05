@@ -24,12 +24,13 @@ public class EnemyControl : MonoBehaviour
         Light = GameObject.FindGameObjectsWithTag("Light");
         Player = GameObject.FindGameObjectWithTag("Player");
 
-        playerPos = Player.transform.position;
+        
         target = point.transform.position;
     }
 
     void Update()
     {
+        playerPos = Player.transform.position;
         transform.position = Vector3.MoveTowards(transform.position, target, Speed);
         if(this.gameObject.transform.position == target)
         {
