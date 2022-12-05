@@ -7,6 +7,7 @@ TagManager:
   - endTarget
   - Light
   - spawnLocation
+  - Door
   layers:
   - Default
   - TransparentFX

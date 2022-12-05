@@ -16,27 +16,19 @@ public class GrapableObject : MonoBehaviour
     {
         this.objTransform = objTransform;
         Objrigid.useGravity = false;
-        Objrigid.isKinematic = true;
+        //Objrigid.isKinematic = true;
     }
 
     public void DropItem()
     {
         this.objTransform = null;
         Objrigid.useGravity = true;
-        Objrigid.isKinematic = false;
+        //Objrigid.isKinematic = false;
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision collision)
     {
-        if (!(other.tag == "Door"))
-        {
-
-        }
-
-        else
-        {
-
-        }
+        if (collision.collider.tag == "Door") Debug.Log("Door");
     }
 
     private void FixedUpdate()
