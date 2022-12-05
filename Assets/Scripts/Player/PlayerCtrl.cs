@@ -24,7 +24,7 @@ public class PlayerCtrl : MonoBehaviour
     /// 플레이어 앉기에 필요한 데이터들
     /// </summary>
     [Range(0, 1.0f)]
-    [SerializeField] private float crouchSpd = 0.3f;
+    [SerializeField] private float crouchSpd = 0.1f;
     [SerializeField] private float crouchHeight = 2f;
     [SerializeField] private float standHeight = 1f;
 
