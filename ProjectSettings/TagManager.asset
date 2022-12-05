@@ -6,6 +6,7 @@ TagManager:
   tags:
   - endTarget
   - Light
+  - spawnLocation
   layers:
   - Default
   - TransparentFX
