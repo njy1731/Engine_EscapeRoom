@@ -260,6 +260,11 @@ MonoBehaviour:
   enemySpawned: 0
   enemy: {fileID: 5717197757904027221, guid: 0cb176ff67948574385a25f37503be79, type: 3}
   spawnPos: {x: 0, y: 0, z: 0}
+--- !u!95 &259851791 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 982713722338044593, guid: 936095af0c2b0eb4d81c3d849d88b1bc, type: 3}
+  m_PrefabInstance: {fileID: 934574584}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &347244799 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2674788723994221730, guid: 68291c6ed69f72b4c8c1b120ce1a5fbe, type: 3}
@@ -1120,7 +1125,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lobby
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 755322964668358310, guid: 936095af0c2b0eb4d81c3d849d88b1bc, type: 3}
+      propertyPath: m_TagString
+      value: Door
+      objectReference: {fileID: 0}
+    - target: {fileID: 8450952141832733906, guid: 936095af0c2b0eb4d81c3d849d88b1bc, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 7950553276712773434, guid: 936095af0c2b0eb4d81c3d849d88b1bc, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 936095af0c2b0eb4d81c3d849d88b1bc, type: 3}
 --- !u!1 &996393682 stripped
 GameObject:
@@ -1553,6 +1567,22 @@ PrefabInstance:
     - target: {fileID: 4712025633774965421, guid: 5bd5105e5e7a9be4a8a83b6f47488436, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5560256174112276443, guid: 5bd5105e5e7a9be4a8a83b6f47488436, type: 3}
+      propertyPath: DoorAni
+      value: 
+      objectReference: {fileID: 259851791}
+    - target: {fileID: 8218679587156815936, guid: 5bd5105e5e7a9be4a8a83b6f47488436, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8218679587156815936, guid: 5bd5105e5e7a9be4a8a83b6f47488436, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8218679587156815936, guid: 5bd5105e5e7a9be4a8a83b6f47488436, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5bd5105e5e7a9be4a8a83b6f47488436, type: 3}
