@@ -12,21 +12,11 @@ public class KeySpawnCtrl : MonoBehaviour
     {
         if (!isItemSpawned)
         {
-            Debug.Log("Spwaned");
+            Debug.Log("Spawned");
             int point = Random.Range(0, spawnpoint.Length);
             Instantiate(keyPrefab);
             keyPrefab.transform.position = spawnpoint[point].transform.position;
             isItemSpawned = true;
-        }
-        //else DestroyItem();
-    }
-
-    void DestroyItem()
-    {
-        if(isItemSpawned)
-        {
-            Debug.Log("Destroy");
-            isItemSpawned = false;
         }
     }
 
