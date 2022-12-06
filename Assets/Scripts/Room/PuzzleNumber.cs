@@ -5,19 +5,8 @@ using UnityEngine;
 using UnityEngine.UI;
 
 [Serializable]
-public class PuzzleNumber : MonoBehaviour
+public class PuzzleNumber
 {
-    private int[] puzzlePicture;
-    private int id = 0;
-
-    //string RandomStringGenerator(int length)
-    //{
-    //    string password = "0123456789";
-    //    string password_string = "";
-
-    //    for (int i = 0; i < length; i++)
-    //        password_string += password[UnityEngine.Random.Range(0, length)];
-
-    //    return password_string;
-    //}
+    public int id = 0;
+    public Image puzzlePicture;
 }
