@@ -14,6 +14,7 @@ public class PickUpItem : MonoBehaviour
     private void Update()
     {
         PickUpItem_();
+        Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward), Color.red);
     }
 
     void PickUpItem_()
