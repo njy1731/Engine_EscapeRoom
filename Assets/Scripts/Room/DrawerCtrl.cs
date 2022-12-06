@@ -2,23 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ClosetCtrl : MonoBehaviour
+public class DrawerCtrl : MonoBehaviour
 {
     public Transform PlayerCamera;
     [Header("MaxDistance you can open or close the door.")]
     public float MaxDistance = 5;
     private GameObject playerCamera;
-    private bool insideCloset;
-    private GameObject player;
     [SerializeField]
-    private GameObject hidePoint;
     private bool opened = false;
     private Animator anim;
 
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
-        hidePoint = GameObject.FindGameObjectWithTag("HidePoint");
+
         playerCamera = GameObject.FindGameObjectWithTag("MainCamera");
         PlayerCamera = playerCamera.transform;
 
@@ -27,11 +23,14 @@ public class ClosetCtrl : MonoBehaviour
 
     void Update()
     {
-        
-        if (Input.GetKeyDown(KeyCode.F))
+
+        if (Input.GetKeyDown(KeyCode.E))
         {
             Pressed();
-            
+            if (opened == !opened)
+            {
+                CloseDoor();
+            }
         }
     }
 
@@ -42,29 +41,21 @@ public class ClosetCtrl : MonoBehaviour
         if (Physics.Raycast(PlayerCamera.transform.position, PlayerCamera.transform.forward, out doorhit, MaxDistance))
         {
 
-            if (doorhit.transform.tag == "ClosetDoor")
+            if (doorhit.transform.tag == "Drawer")
             {
                 anim = doorhit.transform.GetComponentInParent<Animator>();
 
                 opened = !opened;
 
-                anim.SetBool("Opened", !opened);
+                anim.SetBool("Open", !opened);
 
-                player.transform.position = hidePoint.transform.position;
-                Debug.Log("Teleport");
-                
 
-                Invoke("CloseDoor", 1f);
-
-                insideCloset = true;
-
-                
             }
         }
     }
     void CloseDoor()
     {
-        anim.SetBool("Opened", false);
+        anim.SetBool("Open", false);
+        opened = false;
     }
-
 }

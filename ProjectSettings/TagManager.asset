@@ -8,6 +8,9 @@ TagManager:
   - Light
   - spawnLocation
   - Door
+  - ClosetDoor
+  - HidePoint
+  - Drawer
   layers:
   - Default
   - TransparentFX
