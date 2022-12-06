@@ -4,15 +4,11 @@ using UnityEngine;
 
 public class DoorCtrl : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    if (other.CompareTag("Key"))
+    //    {
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    //    }
+    //}
 }

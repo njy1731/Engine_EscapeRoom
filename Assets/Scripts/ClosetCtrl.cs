@@ -6,7 +6,7 @@ public class ClosetCtrl : MonoBehaviour
 {
     public Transform PlayerCamera;
     [Header("MaxDistance you can open or close the door.")]
-    public float MaxDistance = 5;
+    public float MaxDistance = 5f;
     private GameObject playerCamera;
     private bool insideCloset;
     private GameObject player;
@@ -31,7 +31,6 @@ public class ClosetCtrl : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.F))
         {
             Pressed();
-            
         }
     }
 
@@ -66,5 +65,4 @@ public class ClosetCtrl : MonoBehaviour
     {
         anim.SetBool("Opened", false);
     }
-
 }
