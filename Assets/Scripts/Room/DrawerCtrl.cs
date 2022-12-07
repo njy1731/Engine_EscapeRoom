@@ -43,13 +43,10 @@ public class DrawerCtrl : MonoBehaviour
 
             if (doorhit.transform.tag == "Drawer")
             {
-                anim = doorhit.transform.GetComponentInParent<Animator>();
+                anim = transform.GetComponent<Animator>();
 
                 opened = !opened;
-
-                anim.SetBool("Open", !opened);
-
-
+                anim.SetBool("Open", !opened);              
             }
         }
     }
