@@ -14,6 +14,10 @@ public class PlayerCtrl : MonoBehaviour
     [SerializeField] private float moveSpd; //플레이어의 이동속도
     private Vector3 moveForce; //플레이어 이동에 쓰이는 Vector
 
+    [SerializeField]
+    private int MaxHp;
+    private int currHp;
+
     private float gravity = -9.8f; //중력
     private Vector3 _velocity; //중력에 사용되는 Vector
 
@@ -44,6 +48,7 @@ public class PlayerCtrl : MonoBehaviour
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
         status = GetComponent<Status>();
+        currHp = MaxHp;
     }
 
     void Update()
