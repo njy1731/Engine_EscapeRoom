@@ -47,6 +47,7 @@ public class PickUpItem : MonoBehaviour
                     UIManager.instance.HideGetItemUI();
                 }
             }
+            else UIManager.instance.HideGetItemUI();
         }
 
         else return;
