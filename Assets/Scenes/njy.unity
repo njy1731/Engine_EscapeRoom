@@ -569,10 +569,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09f014bdaa67fe743aeef8814a9aafd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickupRange: 10
   itemLayer:
     serializedVersion: 2
     m_Bits: 128
+  furnitureLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  interactRange: 5
   Key: {fileID: 884641331}
   ItemHeld: 0
 --- !u!1 &884641331 stripped
