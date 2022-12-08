@@ -14,7 +14,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Text getCloseFurnitureText; // [ Close ]
 
     [Header("Image Info")]
-    private Image image;
+    private Image passwordHintImage;
 
     void Awake()
     {
@@ -35,5 +35,25 @@ public class UIManager : MonoBehaviour
     public void HideGetItemUI()
     {
         getItemText.gameObject.SetActive(false);
+    }
+
+    public void ShowOpenUI()
+    {
+        getOpenFurnitureText.gameObject.SetActive(true);
+    }
+
+    public void HideOpenUI()
+    {
+        getOpenFurnitureText.gameObject.SetActive(false);
+    }
+
+    public void ShowCloseUI()
+    {
+        getCloseFurnitureText.gameObject.SetActive(true);
+    }
+
+    public void HideCloseUI()
+    {
+        getCloseFurnitureText.gameObject.SetActive(false);
     }
 }

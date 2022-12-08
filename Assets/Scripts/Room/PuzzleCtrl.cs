@@ -12,8 +12,7 @@ public class PuzzleCtrl : MonoBehaviour
 
     void Start()
     {
-        
-        //puzzle.RandomNum(10);
+
     }
 
     private void Update()
