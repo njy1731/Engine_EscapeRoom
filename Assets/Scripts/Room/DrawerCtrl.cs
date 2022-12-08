@@ -8,9 +8,6 @@ public interface WorkFurniture
 }
 public class DrawerCtrl : MonoBehaviour, WorkFurniture
 {
-
-
-
     [SerializeField]
     private bool opened = false;
     private Animator anim;

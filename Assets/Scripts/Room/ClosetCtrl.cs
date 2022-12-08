@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class ClosetCtrl : MonoBehaviour, WorkFurniture
 {
-
     [SerializeField]
     private bool opened = false;
     private Animator anim;
@@ -12,10 +11,6 @@ public class ClosetCtrl : MonoBehaviour, WorkFurniture
     {
         anim = GetComponent<Animator>();
     }
-
-
-
-
 
     public void Work()
     {
