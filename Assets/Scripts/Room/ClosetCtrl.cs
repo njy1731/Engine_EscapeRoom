@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class ClosetCtrl : MonoBehaviour, WorkFurniture
 {
     [SerializeField]
-    private bool opened = false;
+    public bool opened = false;
     private Animator anim;
 
     private void Start()
