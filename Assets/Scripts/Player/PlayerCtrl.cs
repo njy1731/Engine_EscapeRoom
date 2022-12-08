@@ -13,6 +13,7 @@ public class PlayerCtrl : MonoBehaviour
 
     [SerializeField] private float moveSpd; //플레이어의 이동속도
     private Vector3 moveForce; //플레이어 이동에 쓰이는 Vector
+    protected bool dead = false;
 
     [SerializeField]
     private int MaxHp;
