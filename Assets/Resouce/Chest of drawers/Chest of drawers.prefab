@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3780314943407467315}
   - component: {fileID: 79248577519978756}
   - component: {fileID: 7900299857149898299}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Drawer_Big1
   m_TagString: Drawer
   m_Icon: {fileID: 0}
@@ -134,8 +134,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d929d9e581287cf4e8aec3c7317e2f70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerCamera: {fileID: 0}
-  MaxDistance: 3
   opened: 0
 --- !u!1 &127552
 GameObject:
@@ -151,7 +149,7 @@ GameObject:
   - component: {fileID: 4435725292351976407}
   - component: {fileID: 6581318141444403965}
   - component: {fileID: 1073175115030073480}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Drawer1
   m_TagString: Drawer
   m_Icon: {fileID: 0}
@@ -270,8 +268,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d929d9e581287cf4e8aec3c7317e2f70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerCamera: {fileID: 0}
-  MaxDistance: 3
   opened: 0
 --- !u!1 &130962
 GameObject:
@@ -287,7 +283,7 @@ GameObject:
   - component: {fileID: 4350338823598769300}
   - component: {fileID: 6957099367590806367}
   - component: {fileID: 2585822030791531253}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Drawer_Big2
   m_TagString: Drawer
   m_Icon: {fileID: 0}
@@ -407,8 +403,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d929d9e581287cf4e8aec3c7317e2f70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerCamera: {fileID: 0}
-  MaxDistance: 3
   opened: 0
 --- !u!1 &143678
 GameObject:
@@ -424,7 +418,7 @@ GameObject:
   - component: {fileID: 5212516653879559630}
   - component: {fileID: 2491469110457535963}
   - component: {fileID: 602721599092667423}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Drawer_Med2
   m_TagString: Drawer
   m_Icon: {fileID: 0}
@@ -544,8 +538,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d929d9e581287cf4e8aec3c7317e2f70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerCamera: {fileID: 0}
-  MaxDistance: 3
   opened: 0
 --- !u!1 &151878
 GameObject:
@@ -561,7 +553,7 @@ GameObject:
   - component: {fileID: 4226151550175817065}
   - component: {fileID: 7653478436120249891}
   - component: {fileID: 6400979043343089442}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Drawer4
   m_TagString: Drawer
   m_Icon: {fileID: 0}
@@ -680,8 +672,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d929d9e581287cf4e8aec3c7317e2f70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerCamera: {fileID: 0}
-  MaxDistance: 3
   opened: 0
 --- !u!1 &157228
 GameObject:
@@ -863,7 +853,7 @@ GameObject:
   - component: {fileID: 1655331764180657322}
   - component: {fileID: 3453764092372098956}
   - component: {fileID: 5984652347368538716}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Drawer2
   m_TagString: Drawer
   m_Icon: {fileID: 0}
@@ -982,8 +972,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d929d9e581287cf4e8aec3c7317e2f70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerCamera: {fileID: 0}
-  MaxDistance: 3
   opened: 0
 --- !u!1 &172978
 GameObject:
@@ -1082,7 +1070,7 @@ GameObject:
   - component: {fileID: 2542533690508425656}
   - component: {fileID: 2243446972912999346}
   - component: {fileID: 8124803175428969632}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Drawer3
   m_TagString: Drawer
   m_Icon: {fileID: 0}
@@ -1201,8 +1189,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d929d9e581287cf4e8aec3c7317e2f70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerCamera: {fileID: 0}
-  MaxDistance: 3
   opened: 0
 --- !u!1 &181850
 GameObject:
@@ -1218,7 +1204,7 @@ GameObject:
   - component: {fileID: 2797741837448554856}
   - component: {fileID: 1739799187785784843}
   - component: {fileID: 7273718237785503918}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Drawer_Med3
   m_TagString: Drawer
   m_Icon: {fileID: 0}
@@ -1338,8 +1324,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d929d9e581287cf4e8aec3c7317e2f70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerCamera: {fileID: 0}
-  MaxDistance: 3
   opened: 0
 --- !u!1 &183256
 GameObject:
@@ -1630,7 +1614,7 @@ Transform:
   m_GameObject: {fileID: 193672}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 434578}
@@ -1660,7 +1644,7 @@ GameObject:
   - component: {fileID: 5402919083550814910}
   - component: {fileID: 8374920022921551453}
   - component: {fileID: 6187305349313440417}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Drawer_Med1
   m_TagString: Drawer
   m_Icon: {fileID: 0}
@@ -1780,6 +1764,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d929d9e581287cf4e8aec3c7317e2f70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerCamera: {fileID: 0}
-  MaxDistance: 3
   opened: 0
