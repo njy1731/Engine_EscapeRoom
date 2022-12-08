@@ -9,7 +9,7 @@ public class EnemyControl : MonoBehaviour
     [SerializeField]
     private GameObject Player;
     [SerializeField]
-    private int damage;
+    private int damage = 100;
     [SerializeField]
     private GameObject[] Light;
     [SerializeField]
@@ -39,7 +39,6 @@ public class EnemyControl : MonoBehaviour
 
         LightOff();
 
-        transform.LookAt(playerPos);
     }
 
     void LightOff()
