@@ -6,38 +6,15 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
-    public static UIManager instance;
+    public static UIManager instance; //ΩÃ±€≈Ê ∆–≈œ
 
     [Header("Text Info")]
-    [SerializeField] private Text getItemText;
-    [SerializeField] private Text getOpenFurnitureText;
-    [SerializeField] private Text getCloseFurnitureText;
+    [SerializeField] private Text getItemText; // [ Take Item ]
+    [SerializeField] private Text getOpenFurnitureText; // [ Open ]
+    [SerializeField] private Text getCloseFurnitureText; // [ Close ]
 
     [Header("Image Info")]
     private Image image;
-
-    //public static UIManager Instance
-    //{
-    //    get
-    //    {
-    //        if(instance == null)
-    //        {
-    //            return null;
-    //        }
-
-    //        return instance;
-    //    }
-    //}
-
-    public void ShowGetItemUI()
-    {
-        getItemText.gameObject.SetActive(true);
-    }
-
-    public void HideGetItemUI()
-    {
-        getItemText.gameObject.SetActive(false);
-    }
 
     void Awake()
     {
@@ -50,8 +27,13 @@ public class UIManager : MonoBehaviour
         else Destroy(this.gameObject);
     }
 
-    void Update()
+    public void ShowGetItemUI()
     {
-        
+        getItemText.gameObject.SetActive(true);
+    }
+
+    public void HideGetItemUI()
+    {
+        getItemText.gameObject.SetActive(false);
     }
 }
