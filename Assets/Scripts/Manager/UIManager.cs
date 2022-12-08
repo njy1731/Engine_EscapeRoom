@@ -9,9 +9,7 @@ public class UIManager : MonoBehaviour
     public static UIManager instance; //ΩÃ±€≈Ê ∆–≈œ
 
     [Header("Text Info")]
-    [SerializeField] private Text getItemText; // [ Take Item ]
-    [SerializeField] private Text getOpenFurnitureText; // [ Open ]
-    [SerializeField] private Text getCloseFurnitureText; // [ Close ]
+    public Text InteractText; // [  ]
 
     [Header("Image Info")]
     private Image passwordHintImage;
@@ -27,33 +25,13 @@ public class UIManager : MonoBehaviour
         else Destroy(this.gameObject);
     }
 
-    public void ShowGetItemUI()
+    public void ShowInteractText()
     {
-        getItemText.gameObject.SetActive(true);
+        InteractText.gameObject.SetActive(true); 
     }
 
-    public void HideGetItemUI()
+    public void HideInteractText()
     {
-        getItemText.gameObject.SetActive(false);
-    }
-
-    public void ShowOpenUI()
-    {
-        getOpenFurnitureText.gameObject.SetActive(true);
-    }
-
-    public void HideOpenUI()
-    {
-        getOpenFurnitureText.gameObject.SetActive(false);
-    }
-
-    public void ShowCloseUI()
-    {
-        getCloseFurnitureText.gameObject.SetActive(true);
-    }
-
-    public void HideCloseUI()
-    {
-        getCloseFurnitureText.gameObject.SetActive(false);
+        InteractText.gameObject.SetActive(false);
     }
 }

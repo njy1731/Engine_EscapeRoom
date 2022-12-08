@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ClosetCtrl : MonoBehaviour, WorkFurniture
 {
@@ -17,7 +18,5 @@ public class ClosetCtrl : MonoBehaviour, WorkFurniture
     {
         opened = !opened;
         anim.SetBool("Opened", opened);
-        Debug.Log("¿Â∑’ ø≠∏≤");
-        Debug.Log(opened);
     }
 }
