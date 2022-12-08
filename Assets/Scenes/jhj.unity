@@ -1125,20 +1125,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lobby
       objectReference: {fileID: 0}
-    - target: {fileID: 755322964668358310, guid: 936095af0c2b0eb4d81c3d849d88b1bc, type: 3}
-      propertyPath: m_TagString
-      value: Door
+    - target: {fileID: 7950553276722409826, guid: 936095af0c2b0eb4d81c3d849d88b1bc, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7053314219322389421, guid: 936095af0c2b0eb4d81c3d849d88b1bc, type: 3}
-      propertyPath: m_TagString
-      value: Drawer
-      objectReference: {fileID: 0}
-    - target: {fileID: 8450952141832733906, guid: 936095af0c2b0eb4d81c3d849d88b1bc, type: 3}
-      propertyPath: m_TagString
-      value: Untagged
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 7950553276712773434, guid: 936095af0c2b0eb4d81c3d849d88b1bc, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 936095af0c2b0eb4d81c3d849d88b1bc, type: 3}
 --- !u!1 &996393682 stripped
 GameObject:
@@ -1524,6 +1515,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4712025633022434011, guid: 5bd5105e5e7a9be4a8a83b6f47488436, type: 3}
+      propertyPath: furnitureLayer.m_Bits
+      value: 256
+      objectReference: {fileID: 0}
+    - target: {fileID: 4712025633022434015, guid: 5bd5105e5e7a9be4a8a83b6f47488436, type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 503
+      objectReference: {fileID: 0}
     - target: {fileID: 4712025633774965410, guid: 5bd5105e5e7a9be4a8a83b6f47488436, type: 3}
       propertyPath: m_Name
       value: Player

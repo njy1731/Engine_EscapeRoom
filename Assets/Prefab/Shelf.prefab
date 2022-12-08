@@ -107,7 +107,7 @@ GameObject:
   m_Component:
   - component: {fileID: 952260332805791365}
   - component: {fileID: 1144771515688401074}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Shelf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -123,7 +123,7 @@ Transform:
   m_GameObject: {fileID: 467471759577564223}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.3, y: 1, z: 1.5}
+  m_LocalScale: {x: 0.07, y: 0.05, z: 0.08}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3407366590040064207}
@@ -168,7 +168,7 @@ GameObject:
   - component: {fileID: 891429099200197652}
   - component: {fileID: 1847028769505084643}
   - component: {fileID: 6916498414052816483}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: door_2
   m_TagString: ClosetDoor
   m_Icon: {fileID: 0}
@@ -286,9 +286,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21795a51e25a92e46ba67a570438e4de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerCamera: {fileID: 0}
-  MaxDistance: 10
-  hidePoint: {fileID: 0}
+  opened: 0
 --- !u!1 &3575906975940699110
 GameObject:
   m_ObjectHideFlags: 0
@@ -334,7 +332,7 @@ GameObject:
   - component: {fileID: 7769330803065411688}
   - component: {fileID: 1657657747305048732}
   - component: {fileID: 3432240390438626402}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: door_1
   m_TagString: ClosetDoor
   m_Icon: {fileID: 0}
@@ -452,9 +450,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21795a51e25a92e46ba67a570438e4de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerCamera: {fileID: 0}
-  MaxDistance: 10
-  hidePoint: {fileID: 0}
+  opened: 0
 --- !u!1 &7306831320442314481
 GameObject:
   m_ObjectHideFlags: 0
