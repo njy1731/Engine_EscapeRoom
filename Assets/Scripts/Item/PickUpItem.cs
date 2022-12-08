@@ -14,7 +14,7 @@ public class PickUpItem : MonoBehaviour
     [SerializeField] private float interactRange = 5.0f; //상호작용 거리
     [SerializeField] private GameObject Key = null; //아이템을 먹을때 SetActive 시켜주기위한 변수
     public bool ItemHeld = false; //아이템을 들고있는가?
-    public bool isOpened = false;
+    public bool isOpened = false; //가구가 열려있는가?
     //public bool isFurnitureOpen = false;
 
     private void Update()
@@ -22,7 +22,6 @@ public class PickUpItem : MonoBehaviour
         PickUpItem_();
         WorkFurniture();
         Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward), Color.red);
-
     }
 
     /// <summary>
@@ -34,11 +33,38 @@ public class PickUpItem : MonoBehaviour
 
         if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, interactRange, furnitureLayer))
         {
-            UIManager.instance.ShowOpenUI();
+            if (!isOpened)
+            {
+                UIManager.instance.ShowOpenUI();
+                UIManager.instance.HideCloseUI();
+            }
+
+            else
+            {
+                UIManager.instance.ShowCloseUI();
+                UIManager.instance.HideOpenUI();
+            }
+
             if (Input.GetKeyDown(KeyCode.E))
             {
-                hit.collider.GetComponent<WorkFurniture>().Work();
+                if (!isOpened)
+                {
+                    isOpened = true;
+                    hit.collider.GetComponent<WorkFurniture>().Work();
+                }
+
+                else
+                {
+                    isOpened = false;
+                    hit.collider.GetComponent<WorkFurniture>().Work();
+                }
             }
+        }
+
+        else
+        {
+            UIManager.instance.HideOpenUI();
+            UIManager.instance.HideCloseUI();
         }
     }
 

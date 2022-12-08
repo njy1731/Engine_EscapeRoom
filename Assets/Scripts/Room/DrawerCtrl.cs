@@ -6,6 +6,7 @@ public interface WorkFurniture
 {
     public void Work();
 }
+
 public class DrawerCtrl : MonoBehaviour, WorkFurniture
 {
     [SerializeField]
@@ -17,10 +18,9 @@ public class DrawerCtrl : MonoBehaviour, WorkFurniture
         anim = GetComponent<Animator>();
     }
 
-
     public void Work()
     {
         opened = !opened;
-        anim.SetBool("Open", !opened);
+        anim.SetBool("Open", opened);
     }
 }
