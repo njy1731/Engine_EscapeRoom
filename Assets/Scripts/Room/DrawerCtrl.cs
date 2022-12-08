@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public interface WorkFurniture
 {
     public void Work();
 }
+
 public class DrawerCtrl : MonoBehaviour, WorkFurniture
 {
     [SerializeField]
@@ -16,7 +18,6 @@ public class DrawerCtrl : MonoBehaviour, WorkFurniture
     {
         anim = GetComponent<Animator>();
     }
-
 
     public void Work()
     {
