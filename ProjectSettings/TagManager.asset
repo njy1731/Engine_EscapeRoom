@@ -12,7 +12,8 @@ TagManager:
   - HidePoint
   - Drawer
   - Enemy
-  - PlayerHitBox
+  - Key
+  - Furniture
   layers:
   - Default
   - TransparentFX

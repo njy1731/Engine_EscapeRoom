@@ -168,9 +168,9 @@ GameObject:
   - component: {fileID: 891429099200197652}
   - component: {fileID: 1847028769505084643}
   - component: {fileID: 6916498414052816483}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: door_2
-  m_TagString: ClosetDoor
+  m_TagString: Furniture
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -346,9 +346,9 @@ GameObject:
   - component: {fileID: 7769330803065411688}
   - component: {fileID: 1657657747305048732}
   - component: {fileID: 3432240390438626402}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: door_1
-  m_TagString: ClosetDoor
+  m_TagString: Furniture
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -17,10 +17,51 @@ public class PickUpItem : MonoBehaviour
 
     private void Update()
     {
-        PickUpItem_();
-        WorkFurniture();
+        //PickUpItem_();
+        //WorkFurniture();
+        InteractObject();
         Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward), Color.red);
     }
+
+    void InteractObject()
+    {
+        RaycastHit hit;
+
+        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, interactRange))
+        {
+
+            if (hit.collider.CompareTag("Key"))
+            {
+                //UIManager.instance.ShowInteractText();
+
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    Key.SetActive(true);
+                    Destroy(hit.collider.gameObject);
+                    ItemHeld = true;
+                    //UIManager.instance.HideInteractText();
+                }
+            }
+
+            //else UIManager.instance.HideInteractText();
+
+            if (hit.collider.CompareTag("Furniture"))
+            {
+                //UIManager.instance.ShowInteractText();
+
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    hit.collider.GetComponent<WorkFurniture>().Work();
+                    //UIManager.instance.HideInteractText();
+                }
+            }
+
+            //else UIManager.instance.HideInteractText();
+        }
+
+        //else UIManager.instance.HideInteractText();
+    }
+
     /// <summary>
     /// 상호작용 키를 누르면 WorkFurniture 인터페이스를 상속받은 가구의 Work 함수를 실행하게함
     /// </summary>
@@ -50,15 +91,7 @@ public class PickUpItem : MonoBehaviour
 
         if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, interactRange))
         {
-            UIManager.instance.ShowInteractText();
 
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                Key.SetActive(true);
-                Destroy(hit.collider.gameObject);
-                ItemHeld = true;
-                UIManager.instance.HideInteractText();
-            }
         }
 
         else UIManager.instance.HideInteractText();
