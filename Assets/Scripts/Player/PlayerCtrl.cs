@@ -122,4 +122,12 @@ public class PlayerCtrl : MonoBehaviour
         characterCtrl.Move(moveForce * Time.deltaTime);
         MoveTo(new Vector3(x, 0, z).normalized);
     }
+
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    if (other.CompareTag("NonLockedDoor"))
+    //    {
+    //        other.gameObject.GetComponent<Animator>().Play("DoorOpen");
+    //    }
+    //}
 }

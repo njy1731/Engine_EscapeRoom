@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using System;
 
 public class PickUpItem : MonoBehaviour
@@ -9,8 +10,7 @@ public class PickUpItem : MonoBehaviour
     [SerializeField] private LayerMask itemLayer;
     [SerializeField] private LayerMask furnitureLayer;
     [SerializeField] private GameObject Key = null;
-    private GameObject heldObj = null;
-    public bool isItem = false;
+    public bool ItemHeld = false;
 
     private void Update()
     {
@@ -32,18 +32,23 @@ public class PickUpItem : MonoBehaviour
     }
     void PickUpItem_()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (!ItemHeld)
         {
-            if (heldObj == null)
-            {
-                RaycastHit hit;
+            RaycastHit hit;
 
-                if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, pickupRange, itemLayer))
+            if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, pickupRange, itemLayer))
+            {
+                UIManager.instance.ShowGetItemUI();
+                if (Input.GetKeyDown(KeyCode.E))
                 {
                     Key.SetActive(true);
                     Destroy(hit.collider.gameObject);
+                    ItemHeld = true;
+                    UIManager.instance.HideGetItemUI();
                 }
             }
         }
+
+        else return;
     }
 }
