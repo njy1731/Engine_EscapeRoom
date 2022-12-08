@@ -79,17 +79,17 @@ public class PickUpItem : MonoBehaviour
 
             if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, interactRange, itemLayer))
             {
-                UIManager.instance.ShowGetItemUI();
+                //UIManager.instance.ShowGetItemUI();
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     Key.SetActive(true);
                     Destroy(hit.collider.gameObject);
                     ItemHeld = true;
-                    UIManager.instance.HideGetItemUI();
+                    //UIManager.instance.HideGetItemUI();
                 }
             }
 
-            else UIManager.instance.HideGetItemUI();
+            //else UIManager.instance.HideGetItemUI();
         }
 
         else return;
