@@ -5,7 +5,7 @@ using UnityEngine;
 public class ClosetCtrl : MonoBehaviour, WorkFurniture
 {
     [SerializeField]
-    private bool opened = false;
+    public bool opened = false;
     private Animator anim;
     private void Start()
     {
@@ -15,6 +15,6 @@ public class ClosetCtrl : MonoBehaviour, WorkFurniture
     public void Work()
     {
         opened = !opened;
-        anim.SetBool("Opened", !opened);
+        anim.SetBool("Opened", opened);
     }
 }

@@ -12,6 +12,7 @@ TagManager:
   - HidePoint
   - Drawer
   - Enemy
+  - PlayerHitBox
   layers:
   - Default
   - TransparentFX

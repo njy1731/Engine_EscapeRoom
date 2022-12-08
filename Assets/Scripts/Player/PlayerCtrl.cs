@@ -10,6 +10,9 @@ public class PlayerCtrl : MonoBehaviour
 
     private KeyCode crouchKey = KeyCode.LeftControl; //키 할당
     private KeyCode runKey = KeyCode.LeftShift; //키 할당
+    public GameObject playerHitBox;
+
+    public GameObject closet;
 
     [SerializeField] private float moveSpd; //플레이어의 이동속도
     private Vector3 moveForce; //플레이어 이동에 쓰이는 Vector
@@ -21,6 +24,8 @@ public class PlayerCtrl : MonoBehaviour
 
     private float gravity = -9.8f; //중력
     private Vector3 _velocity; //중력에 사용되는 Vector
+
+    public ClosetCtrl closetCtrl;
 
     private bool isCrouch = false; //앉아 있는가 서있는가 판별
     [SerializeField] Transform playerCam = null; //플레이어가 앉을때 카메라의 이동
@@ -53,6 +58,7 @@ public class PlayerCtrl : MonoBehaviour
         status = GetComponent<Status>();
         currHp = MaxHp;
         cameraShake = GetComponent<CameraShake>();
+        closetCtrl = closet.GetComponentInChildren<ClosetCtrl>();
     }
 
     void Update()
@@ -60,6 +66,7 @@ public class PlayerCtrl : MonoBehaviour
         isCrouch = Input.GetKey(crouchKey); //Boolean 형식?으로 사용 (앉으면 true 서있으면 false)
         MovePlayer(); //마우스 이동
         setGravity(); //플레이어 중력 적용
+        
     }
 
     /// <summary>
@@ -146,7 +153,34 @@ public class PlayerCtrl : MonoBehaviour
 
     private void GameOver()
     {
-
         StartCoroutine(cameraShake.Shake());
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if(other.gameObject.CompareTag("HidePoint") == true)
+        {
+            if (other.GetComponentInChildren<ClosetCtrl>() != null) 
+            {
+                if(other.GetComponentInChildren<ClosetCtrl>().opened == true)
+                {
+                    
+                }
+
+            }
+            else
+            {
+                playerHitBox.SetActive(false);
+            }
+        }
+        
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("HidePoint") == true)
+        {
+            playerHitBox.SetActive(true);
+        }
+
     }
 }

@@ -21,6 +21,6 @@ public class DrawerCtrl : MonoBehaviour, WorkFurniture
     public void Work()
     {
         opened = !opened;
-        anim.SetBool("Open", !opened);
+        anim.SetBool("Open", opened);
     }
 }

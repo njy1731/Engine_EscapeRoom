@@ -52,10 +52,12 @@ public class EnemyControl : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.CompareTag("Player") == true)
+        if(other.gameObject.CompareTag("PlayerHitBox") == true)
         {
-            if (other.GetComponent<PlayerCtrl>() != null)
-                other.GetComponent<PlayerCtrl>().PlayerDamage(100);
+            if (other.GetComponentInParent<PlayerCtrl>() != null)
+            {
+                other.GetComponentInParent<PlayerCtrl>().PlayerDamage(100);
+            }
         }    
     }
 }
