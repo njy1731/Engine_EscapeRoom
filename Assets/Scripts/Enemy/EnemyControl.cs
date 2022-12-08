@@ -9,7 +9,7 @@ public class EnemyControl : MonoBehaviour
     [SerializeField]
     private GameObject Player;
     [SerializeField]
-    private int damage = 100;
+    public int damage = 100;
     [SerializeField]
     private GameObject[] Light;
     [SerializeField]
@@ -18,13 +18,14 @@ public class EnemyControl : MonoBehaviour
     private float Speed;
     [SerializeField]
     private Vector3 playerPos;
+
+   
     void Start()
     {
         point = GameObject.FindGameObjectWithTag("endTarget");
         Light = GameObject.FindGameObjectsWithTag("Light");
         Player = GameObject.FindGameObjectWithTag("Player");
 
-        
         target = point.transform.position;
     }
 
@@ -47,5 +48,14 @@ public class EnemyControl : MonoBehaviour
         {
             item.SetActive(false);
         }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.CompareTag("Player") == true)
+        {
+            if (other.GetComponent<PlayerCtrl>() != null)
+                other.GetComponent<PlayerCtrl>().PlayerDamage(100);
+        }    
     }
 }

@@ -13,10 +13,10 @@ public class PlayerCtrl : MonoBehaviour
 
     [SerializeField] private float moveSpd; //플레이어의 이동속도
     private Vector3 moveForce; //플레이어 이동에 쓰이는 Vector
-    protected bool dead = false;
 
     [SerializeField]
     private int MaxHp;
+    [SerializeField]
     private int currHp;
 
     private float gravity = -9.8f; //중력
@@ -32,6 +32,8 @@ public class PlayerCtrl : MonoBehaviour
     [SerializeField] private float crouchSpd = 0.1f;
     [SerializeField] private float crouchHeight = 2f;
     [SerializeField] private float standHeight = 1f;
+
+    private CameraShake cameraShake;
 
     //플레이어 속도를 프로퍼티로 받음
     public float MoveSpd
@@ -50,6 +52,7 @@ public class PlayerCtrl : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         status = GetComponent<Status>();
         currHp = MaxHp;
+        cameraShake = GetComponent<CameraShake>();
     }
 
     void Update()
@@ -131,4 +134,19 @@ public class PlayerCtrl : MonoBehaviour
     //        other.gameObject.GetComponent<Animator>().Play("DoorOpen");
     //    }
     //}
+
+    public void PlayerDamage(int damage)
+    {
+        currHp -= damage;
+        if(currHp <= 0 )
+        {
+            GameOver();
+        }
+    }
+
+    private void GameOver()
+    {
+
+        StartCoroutine(cameraShake.Shake());
+    }
 }
