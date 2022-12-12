@@ -1055,8 +1055,8 @@ MonoBehaviour:
   Key: {fileID: 884641331}
   ItemHeld: 0
   TakeItemText: {fileID: 477183762}
-  OpenText: {fileID: 0}
-  CloseText: {fileID: 0}
+  OpenText: {fileID: 447137108}
+  CloseText: {fileID: 131005119}
 --- !u!1 &688905571
 GameObject:
   m_ObjectHideFlags: 0

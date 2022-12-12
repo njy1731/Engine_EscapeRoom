@@ -10,6 +10,7 @@ public class PuzzleCtrl : MonoBehaviour
     [SerializeField] private int maxCount;
     [SerializeField] private int n;
     private string password_str = "";
+    private bool isTake = false;
 
     private int length = 10;
 
@@ -42,7 +43,13 @@ public class PuzzleCtrl : MonoBehaviour
 
     private void RandomPuzzle()
     {
-        //SO.randomPuzzle();
+        RandomPasswordText.text = password_str;
+        if (!isTake)
+        {
+            RandomPasswordText.gameObject.SetActive(true);
+        }
+
+        else RandomPasswordText.gameObject.SetActive(false);
     }
 
     private void RandomPassword()

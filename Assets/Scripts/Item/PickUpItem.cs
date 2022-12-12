@@ -14,7 +14,7 @@ public class PickUpItem : MonoBehaviour
     private ClosetCtrl closet;
 
     [Header("PickUp, Open Info")]
-    [SerializeField] private float interactRange = 5.0f; //상호작용 거리
+    [SerializeField] private float interactRange = 2.0f; //상호작용 거리
     [SerializeField] private GameObject Key = null; //아이템을 먹을때 SetActive 시켜주기위한 변수
     public bool ItemHeld = false; //아이템을 들고있는가?
 
