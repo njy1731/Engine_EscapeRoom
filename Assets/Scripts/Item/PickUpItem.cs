@@ -15,6 +15,12 @@ public class PickUpItem : MonoBehaviour
     [SerializeField] private GameObject Key = null; //아이템을 먹을때 SetActive 시켜주기위한 변수
     public bool ItemHeld = false; //아이템을 들고있는가?
 
+    [Header("UI Info")]
+    [SerializeField] private Text OpenText;
+    [SerializeField] private Text CloseText;
+    [SerializeField] private Text TakeItemText;
+
+
     private void Update()
     {
         //PickUpItem_();
@@ -33,6 +39,7 @@ public class PickUpItem : MonoBehaviour
             if (hit.collider.CompareTag("Key"))
             {
                 //UIManager.instance.ShowInteractText();
+                TakeItemText.gameObject.SetActive(true);
 
                 if (Input.GetKeyDown(KeyCode.E))
                 {
@@ -40,25 +47,47 @@ public class PickUpItem : MonoBehaviour
                     Destroy(hit.collider.gameObject);
                     ItemHeld = true;
                     //UIManager.instance.HideInteractText();
+                    TakeItemText.gameObject.SetActive(false);
                 }
             }
+
+            else TakeItemText.gameObject.SetActive(false);
 
             //else UIManager.instance.HideInteractText();
 
             if (hit.collider.CompareTag("Furniture"))
             {
                 //UIManager.instance.ShowInteractText();
+                DrawerCtrl draw = GetComponent<DrawerCtrl>();
+                ClosetCtrl closet = GetComponent<ClosetCtrl>();
+
+                //if (draw.opened == false || !closet.opened == false)
+                //{
+                //    OpenText.gameObject.SetActive(true);
+                //}
 
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     hit.collider.GetComponent<WorkFurniture>().Work();
+
+                    //if (draw.opened == true || closet.opened == true)
+                    //{
+                    //    OpenText.gameObject.SetActive(false);
+                    //}
                     //UIManager.instance.HideInteractText();
                 }
             }
 
+            //else return;
             //else UIManager.instance.HideInteractText();
         }
 
+        else
+        {
+            TakeItemText.gameObject.SetActive(false);
+            OpenText.gameObject.SetActive(false);
+            CloseText.gameObject.SetActive(false);
+        }
         //else UIManager.instance.HideInteractText();
     }
 
