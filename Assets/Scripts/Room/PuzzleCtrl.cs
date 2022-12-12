@@ -5,14 +5,21 @@ using UnityEngine.UI;
 
 public class PuzzleCtrl : MonoBehaviour
 {
-    [SerializeField] Puzzleo So;
+
+    //[SerializeField] PuzzleSO SO;
     [SerializeField] private int maxCount;
     [SerializeField] private int n;
     private string password_str = "";
 
+    private int length = 10;
+
+    [Header("UI Info")]
+    [SerializeField] private Image PasswordImage;
+    [SerializeField] private Text RandomPasswordText;
+
     void Start()
     {
-
+        //SO = GetComponent<PuzzleSO>();
     }
 
     private void Update()
@@ -29,6 +36,13 @@ public class PuzzleCtrl : MonoBehaviour
         {
             password_str = "";
         }
+
+        RandomPuzzle();
+    }
+
+    private void RandomPuzzle()
+    {
+        //SO.randomPuzzle();
     }
 
     private void RandomPassword()

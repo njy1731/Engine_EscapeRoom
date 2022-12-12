@@ -1055,6 +1055,8 @@ MonoBehaviour:
   Key: {fileID: 884641331}
   ItemHeld: 0
   TakeItemText: {fileID: 477183762}
+  OpenText: {fileID: 0}
+  CloseText: {fileID: 0}
 --- !u!1 &688905571
 GameObject:
   m_ObjectHideFlags: 0
@@ -1284,6 +1286,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxCount: 10
   n: 4
+  PasswordImage: {fileID: 793136964}
+  RandomPasswordText: {fileID: 1408287134}
 --- !u!1 &957598838
 GameObject:
   m_ObjectHideFlags: 0
@@ -1555,7 +1559,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: 1234
 --- !u!222 &1408287135
 CanvasRenderer:
   m_ObjectHideFlags: 0
