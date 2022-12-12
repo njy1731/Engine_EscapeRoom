@@ -17,9 +17,9 @@ public class PlayerCtrl : MonoBehaviour
     private Vector3 moveForce; //플레이어 이동에 쓰이는 Vector
 
     [SerializeField]
-    private int MaxHp;
+    public int MaxHp;
     [SerializeField]
-    private int currHp;
+    public int currHp;
 
     private float gravity = -9.8f; //중력
     private Vector3 _velocity; //중력에 사용되는 Vector
