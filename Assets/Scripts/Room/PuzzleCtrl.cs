@@ -5,10 +5,10 @@ using UnityEngine.UI;
 
 public class PuzzleCtrl : MonoBehaviour
 {
-    //[SerializeField] private PuzzleSO puzzle;
+    [SerializeField] Puzzleo So;
     [SerializeField] private int maxCount;
     [SerializeField] private int n;
-    private string name_ = "";
+    private string password_str = "";
 
     void Start()
     {
@@ -17,7 +17,7 @@ public class PuzzleCtrl : MonoBehaviour
 
     private void Update()
     {
-        if (name_ == "")
+        if (password_str == "")
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
@@ -27,7 +27,7 @@ public class PuzzleCtrl : MonoBehaviour
 
         else
         {
-            name_ = "";
+            password_str = "";
         }
     }
 
@@ -36,9 +36,9 @@ public class PuzzleCtrl : MonoBehaviour
         int[] numbers = PasswordGenerator.RandomNumbers(maxCount, n);
         for (int i = 0; i < numbers.Length; i++)
         {
-            name_ += numbers[i].ToString();
+            password_str += numbers[i].ToString();
         }
-        Debug.Log(name_);
+        Debug.Log(password_str);
     }
 
     public static class PasswordGenerator

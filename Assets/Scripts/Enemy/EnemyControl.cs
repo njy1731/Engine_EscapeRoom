@@ -56,7 +56,7 @@ public class EnemyControl : MonoBehaviour
         {
             if (other.GetComponentInParent<PlayerCtrl>() != null)
             {
-                other.GetComponentInParent<PlayerCtrl>().PlayerDamage(100);
+                other.GetComponentInParent<PlayerCtrl>().PlayerDamage(damage);
             }
         }    
     }

@@ -10,7 +10,7 @@ public class PlayerCtrl : MonoBehaviour
 
     private KeyCode crouchKey = KeyCode.LeftControl; //키 할당
     private KeyCode runKey = KeyCode.LeftShift; //키 할당
-    public GameObject playerHitBox;
+    [SerializeField] private GameObject playerHitBox;
 
 
     [SerializeField] private float moveSpd; //플레이어의 이동속도

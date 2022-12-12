@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class enemySpawn : MonoBehaviour
-{
+{ 
+    //이 스크립트는 GameManager로 옮길 예정? 입니다.
     [SerializeField]
     private float waitTime = 10f;
     private float currTime;
@@ -22,9 +23,7 @@ public class enemySpawn : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         EnemySpawner();
-
     }
 
     private void EnemySpawner()
@@ -56,6 +55,4 @@ public class enemySpawn : MonoBehaviour
             }
         }
     }
-
-
 }

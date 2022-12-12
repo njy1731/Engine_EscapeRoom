@@ -12,8 +12,6 @@ public class watcherEnemyScript : MonoBehaviour
     void Start()
     {
         Player = GameObject.FindGameObjectWithTag("Player");
-
-        
     }
 
     // Update is called once per frame

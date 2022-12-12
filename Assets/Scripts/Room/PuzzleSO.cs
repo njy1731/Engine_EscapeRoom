@@ -1,26 +1,26 @@
-//using system.collections;
-//using system.collections.generic;
-//using system;
-//using unityengine;
-//using unityengine.ui;
+using System.Collections;
+using System.Collections.Generic;
+using System;
+using UnityEngine;
+using UnityEngine.UI;
 
-//[createassetmenu(filename ="new puzzle", menuname ="room/puzzles/new puzzle")]
-//public class puzzleso : scriptableobject
-//{
-//    public list<puzzlenumber> puzzlenum = new list<puzzlenumber>();
+[CreateAssetMenu(fileName = "New Puzzle", menuName = "Room/Puzzles/New Puzzle")]
+public class Puzzleo : ScriptableObject
+{
+    public List<PuzzleNumber> puzzlenum = new List<PuzzleNumber>();
 
-//    public puzzlenumber[] randomnum(int length)
-//    {
-//        puzzlenumber[] puzzlenumbers = new puzzlenumber[length];
-//        for (int i = 0; i < length; i++)
-//        {
-//            int id = unityengine.random.range(0, 10);
-//            puzzlenumbers[i] = puzzlenum.find(x => x.id == id);
-//        }
+    public PuzzleNumber[] randomnum(int length)
+    {
+        PuzzleNumber[] puzzlenumbers = new PuzzleNumber[length];
+        for (int i = 0; i < length; i++)
+        {
+            int id = UnityEngine.Random.Range(0, 10);
+            puzzlenumbers[i] = puzzlenum.Find(x => x.id == id);
+        }
 
-//        return puzzlenumbers;
-//    }
-//}
+        return puzzlenumbers;
+    }
+}
 
 //public static class passwordgenerator
 //{
@@ -36,10 +36,10 @@
 
 //        for (int i = 0; i < n; ++i)
 //        {
-//            int index = unityengine.random.range(0, maxcount);
+//            int index = UnityEngine.Random.Range(0, maxcount);
 
 //            results[i] = defaults[index];
-//            defaults[index] = defaults[maxcount -1];
+//            defaults[index] = defaults[maxcount - 1];
 
 //            maxcount--;
 //        }

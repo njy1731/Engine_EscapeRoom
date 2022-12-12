@@ -1420,9 +1420,9 @@ GameObject:
   - component: {fileID: 3317822}
   - component: {fileID: 2346756}
   - component: {fileID: 7202468062627299407}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Chest of drawers
-  m_TagString: Drawer
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1598,7 +1598,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 417992}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Chest of drawers
   m_TagString: Untagged
   m_Icon: {fileID: 0}

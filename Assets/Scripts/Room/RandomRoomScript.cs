@@ -17,7 +17,6 @@ public class RandomRoomScript : MonoBehaviour
         
     }
 
-    // Update is called once per frame
     void Update()
     {
         
