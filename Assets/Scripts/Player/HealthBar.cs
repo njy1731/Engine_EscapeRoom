@@ -20,6 +20,6 @@ public class HealthBar : MonoBehaviour
     void Update()
     {
         HpImage.fillAmount = playerCtrl.currHp / maxHp;
-        Hptext.text = "" + (HpImage.fillAmount * 100) + "/  100";
+        Hptext.text = "" + (HpImage.fillAmount * 100) + "/100";
     }
 }
