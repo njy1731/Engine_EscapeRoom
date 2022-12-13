@@ -27,6 +27,7 @@ public class EnemyControl : MonoBehaviour
         Player = GameObject.FindGameObjectWithTag("Player");
 
         target = point.transform.position;
+
     }
 
     void Update()
@@ -38,7 +39,9 @@ public class EnemyControl : MonoBehaviour
             Destroy(this.gameObject);
         }
 
-        LightOff();
+        
+        
+
 
     }
 
@@ -47,6 +50,13 @@ public class EnemyControl : MonoBehaviour
         foreach(GameObject item in Light)
         {
             item.SetActive(false);
+        }
+    }
+    void LightOn()
+    {
+        foreach(GameObject item in Light)
+        {
+            item.SetActive(true);
         }
     }
 
@@ -59,5 +69,9 @@ public class EnemyControl : MonoBehaviour
                 other.GetComponentInParent<PlayerCtrl>().PlayerDamage(damage);
             }
         }    
+        if(other.gameObject.CompareTag("Light") == true)
+        {
+            other.gameObject.SetActive(false);
+        }
     }
 }
