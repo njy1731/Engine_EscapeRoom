@@ -13,6 +13,9 @@ public class PuzzleCtrl : MonoBehaviour
     private int[] randomSign;
     private bool isTake = false;
 
+    [SerializeField] private int num;
+    public List<string> SignList = new List<string>() { "@", "#", "$", "&", "*" };
+
     private int length_ = 10;
 
     [Header("UI Info")]
@@ -23,7 +26,7 @@ public class PuzzleCtrl : MonoBehaviour
     void Start()
     {
         //SO = GetComponent<PuzzleSO>();
-        Debug.Log(StringUtils.GeneratePassword(4));
+        //Debug.Log(StringUtils.GeneratePassword(4));
 
     }
 
@@ -58,6 +61,7 @@ public class PuzzleCtrl : MonoBehaviour
         {
             password_str += numbers[i].ToString();
             //randomSign[i] += numbers[i];
+            Debug.Log(numbers[i]);
         }
         Debug.Log(password_str);
         //StringUtils.GeneratePassword(4);
@@ -89,23 +93,14 @@ public class PuzzleCtrl : MonoBehaviour
         }
     }
 
-    public static class StringUtils
+
+    public void RandomSign()
     {
-        private const string PASSWORD_CHARS = "@#$*";
-
-        public static string GeneratePassword(int length)
+        for (int i = 0; i < num; i++)
         {
-            var sb = new System.Text.StringBuilder(length);
-            var r = new System.Random();
-
-            for (int i = 0; i < length; i++)
-            {
-                int pos = r.Next(PASSWORD_CHARS.Length);
-                char c = PASSWORD_CHARS[pos];
-                sb.Append(c);
-            }
-
-            return sb.ToString();
+            int rand = Random.Range(0, SignList.Count);
+            print(SignList[rand]);
+            SignList.RemoveAt(rand);
         }
     }
 }
