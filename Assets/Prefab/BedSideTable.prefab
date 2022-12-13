@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 2392053151436904801}
   - component: {fileID: 2392053151432878337}
   - component: {fileID: 6718171619944826075}
-  m_Layer: 0
+  - component: {fileID: 2933624094765285970}
+  m_Layer: 8
   m_Name: BedSideTable_Door
   m_TagString: Furniture
   m_Icon: {fileID: 0}
@@ -110,7 +111,7 @@ Animator:
   m_GameObject: {fileID: 2392053151439161249}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 487f632c231cd3e40b856102cdb258a2, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -120,6 +121,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2933624094765285970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2392053151439161249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d929d9e581287cf4e8aec3c7317e2f70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  opened: 0
 --- !u!1 &2392053151439161251
 GameObject:
   m_ObjectHideFlags: 0

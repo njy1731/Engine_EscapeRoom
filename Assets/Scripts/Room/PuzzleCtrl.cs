@@ -10,32 +10,28 @@ public class PuzzleCtrl : MonoBehaviour
     [SerializeField] private int maxCount;
     [SerializeField] private int n;
     private string password_str = "";
+    private int[] randomSign;
     private bool isTake = false;
 
-    private int length = 10;
+    private int length_ = 10;
 
     [Header("UI Info")]
     [SerializeField] private Image PasswordImage;
     [SerializeField] private Text RandomPasswordText;
+    [SerializeField] private GameObject randomPasswordObj;
 
     void Start()
     {
         //SO = GetComponent<PuzzleSO>();
+        Debug.Log(StringUtils.GeneratePassword(4));
+
     }
 
     private void Update()
     {
-        if (password_str == "")
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                RandomPassword();
-            }
-        }
-
-        else
-        {
-            password_str = "";
+            RandomPassword();
         }
 
         RandomPuzzle();
@@ -44,12 +40,15 @@ public class PuzzleCtrl : MonoBehaviour
     private void RandomPuzzle()
     {
         RandomPasswordText.text = password_str;
-        if (!isTake)
-        {
-            RandomPasswordText.gameObject.SetActive(true);
-        }
 
-        else RandomPasswordText.gameObject.SetActive(false);
+        //if (!isTake)
+        //{
+        //    randomPasswordObj.gameObject.SetActive(true);
+        //}
+
+        //else randomPasswordObj.gameObject.SetActive(false);
+
+        //password_str = "";
     }
 
     private void RandomPassword()
@@ -58,8 +57,10 @@ public class PuzzleCtrl : MonoBehaviour
         for (int i = 0; i < numbers.Length; i++)
         {
             password_str += numbers[i].ToString();
+            //randomSign[i] += numbers[i];
         }
         Debug.Log(password_str);
+        //StringUtils.GeneratePassword(4);
     }
 
     public static class PasswordGenerator
@@ -85,6 +86,26 @@ public class PuzzleCtrl : MonoBehaviour
             }
 
             return results;
+        }
+    }
+
+    public static class StringUtils
+    {
+        private const string PASSWORD_CHARS = "@#$*";
+
+        public static string GeneratePassword(int length)
+        {
+            var sb = new System.Text.StringBuilder(length);
+            var r = new System.Random();
+
+            for (int i = 0; i < length; i++)
+            {
+                int pos = r.Next(PASSWORD_CHARS.Length);
+                char c = PASSWORD_CHARS[pos];
+                sb.Append(c);
+            }
+
+            return sb.ToString();
         }
     }
 }
