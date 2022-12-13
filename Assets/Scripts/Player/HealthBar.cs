@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Rendering.PostProcessing;
 
 public class HealthBar : MonoBehaviour
 {
@@ -33,6 +34,7 @@ public class HealthBar : MonoBehaviour
             glitchEffect.flipIntensity = 0.5f;
             glitchEffect.intensity = 0.5f;
             glitchEffect.colorIntensity = 0.5f;
+
         }
         if(playerCtrl.currHp <= 10)
         {
