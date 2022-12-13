@@ -5,17 +5,10 @@ using UnityEngine.UI;
 
 public class PuzzleCtrl : MonoBehaviour
 {
-
-    //[SerializeField] PuzzleSO SO;
     [SerializeField] private int maxCount;
     [SerializeField] private int n;
     private string password_str = "";
-    private int[] randomSign;
     private bool isTake = false;
-
-    [SerializeField] private int num;
-    public List<string> SignList = new List<string>() { "@", "#", "$", "&", "*" };
-
     private int length_ = 10;
 
     [Header("UI Info")]
@@ -25,8 +18,6 @@ public class PuzzleCtrl : MonoBehaviour
 
     void Start()
     {
-        //SO = GetComponent<PuzzleSO>();
-        //Debug.Log(StringUtils.GeneratePassword(4));
 
     }
 
@@ -43,28 +34,20 @@ public class PuzzleCtrl : MonoBehaviour
     private void RandomPuzzle()
     {
         RandomPasswordText.text = password_str;
-
-        //if (!isTake)
-        //{
-        //    randomPasswordObj.gameObject.SetActive(true);
-        //}
-
-        //else randomPasswordObj.gameObject.SetActive(false);
-
-        //password_str = "";
     }
 
     private void RandomPassword()
     {
         int[] numbers = PasswordGenerator.RandomNumbers(maxCount, n);
+        List<int> randomSign = new List<int>(numbers);
         for (int i = 0; i < numbers.Length; i++)
         {
             password_str += numbers[i].ToString();
-            //randomSign[i] += numbers[i];
-            Debug.Log(numbers[i]);
+            //Debug.Log(numbers[i]);
+            Debug.Log(randomSign[i]);
         }
+
         Debug.Log(password_str);
-        //StringUtils.GeneratePassword(4);
     }
 
     public static class PasswordGenerator
@@ -93,15 +76,14 @@ public class PuzzleCtrl : MonoBehaviour
         }
     }
 
-
-    public void RandomSign()
-    {
-        for (int i = 0; i < num; i++)
-        {
-            int rand = Random.Range(0, SignList.Count);
-            print(SignList[rand]);
-            SignList.RemoveAt(rand);
-        }
-    }
+    //public void RandomSign()
+    //{
+    //    for (int i = 0; i < num; i++)
+    //    {
+    //        int rand = Random.Range(0, SignList.Count);
+    //        print(SignList[rand]);
+    //        SignList.RemoveAt(rand);
+    //    }
+    //}
 }
 

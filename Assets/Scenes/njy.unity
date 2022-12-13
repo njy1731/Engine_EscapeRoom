@@ -194,7 +194,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: '[ Close ]'
+  m_Text: '    [ E ]
+
+    [ Close ]'
 --- !u!222 &131005120
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -502,7 +504,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: '[ Open ]'
+  m_Text: '    [ E ]
+
+    [ Open ]'
 --- !u!222 &447137109
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -582,7 +586,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: '[ Take Item ]'
+  m_Text: '       [ E ]
+
+    [ Take Item ]'
 --- !u!222 &477183763
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -858,7 +864,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &688905572
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1442,7 +1448,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 1234
+  m_Text: '1234
+
+    #$@&'
 --- !u!222 &1408287135
 CanvasRenderer:
   m_ObjectHideFlags: 0
