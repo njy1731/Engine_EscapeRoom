@@ -183,5 +183,10 @@ public class PlayerCtrl : MonoBehaviour
         {
             playerHitBox.SetActive(true);
         }
+
+        //if (other.gameObject.CompareTag("Door"))
+        //{
+        //    other.GetComponentInParent<Animator>().Play("DoorOpen");
+        //}
     }
 }
