@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2392053151436904801}
   - component: {fileID: 2392053151432878337}
   - component: {fileID: 6718171619944826075}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BedSideTable_Door
   m_TagString: Furniture
   m_Icon: {fileID: 0}
