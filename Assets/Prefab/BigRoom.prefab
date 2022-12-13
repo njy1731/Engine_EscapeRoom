@@ -1905,6 +1905,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7698668323976051956}
   - component: {fileID: 6359460352479450738}
+  - component: {fileID: 5201135858860450014}
+  - component: {fileID: 4203848334353549020}
   m_Layer: 0
   m_Name: Point Light
   m_TagString: Light
@@ -1989,6 +1991,31 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!65 &5201135858860450014
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2124692950622815241}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &4203848334353549020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2124692950622815241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56423b2dd3a92a14f8a7e51780e074f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2339044041639554848
 GameObject:
   m_ObjectHideFlags: 0
@@ -2193,6 +2220,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5723053504922449850}
   - component: {fileID: 8678981154887188169}
+  - component: {fileID: 6841420656142084909}
+  - component: {fileID: 5196730805606799407}
   m_Layer: 0
   m_Name: Point Light
   m_TagString: Light
@@ -2277,6 +2306,31 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!65 &6841420656142084909
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2408815435285339697}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &5196730805606799407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2408815435285339697}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56423b2dd3a92a14f8a7e51780e074f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2423413502774932143
 GameObject:
   m_ObjectHideFlags: 0
@@ -3806,6 +3860,8 @@ GameObject:
   m_Component:
   - component: {fileID: 9052633401812262096}
   - component: {fileID: 3146358475446636540}
+  - component: {fileID: 7547193918559784638}
+  - component: {fileID: 4686374709409759214}
   m_Layer: 0
   m_Name: Point Light
   m_TagString: Light
@@ -3890,6 +3946,31 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!65 &7547193918559784638
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6028500134792365835}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &4686374709409759214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6028500134792365835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56423b2dd3a92a14f8a7e51780e074f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6073312821526844539
 GameObject:
   m_ObjectHideFlags: 0
@@ -5481,6 +5562,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1869231703815599628}
   - component: {fileID: 6101915741769025195}
+  - component: {fileID: 986778506577213915}
+  - component: {fileID: 1316024266838200282}
   m_Layer: 0
   m_Name: Point Light
   m_TagString: Light
@@ -5565,6 +5648,31 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!65 &986778506577213915
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9084553161253178993}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1316024266838200282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9084553161253178993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56423b2dd3a92a14f8a7e51780e074f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &6037089140052285
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 614680112700377367}
   - component: {fileID: 3913870500537315387}
+  - component: {fileID: 2974929696642246515}
+  - component: {fileID: 1825842240709868910}
   m_Layer: 0
   m_Name: Spot Light
   m_TagString: Light
@@ -94,6 +96,31 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!65 &2974929696642246515
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6014927778706977750}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1825842240709868910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6014927778706977750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56423b2dd3a92a14f8a7e51780e074f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7163538278751455227
 GameObject:
   m_ObjectHideFlags: 0
@@ -104,6 +131,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6467643729629137470}
   - component: {fileID: 3079737937269649018}
+  - component: {fileID: 3682206855339228830}
+  - component: {fileID: 5325179188506199288}
   m_Layer: 0
   m_Name: Point Light
   m_TagString: Light
@@ -170,7 +199,7 @@ Light:
       e33: 1
     m_UseCullingMatrixOverride: 0
   m_Cookie: {fileID: 0}
-  m_DrawHalo: 0
+  m_DrawHalo: 1
   m_Flare: {fileID: 0}
   m_RenderMode: 0
   m_CullingMask:
@@ -188,6 +217,31 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!65 &3682206855339228830
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7163538278751455227}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 7.91019, y: 4.4073462, z: 5.3165026}
+  m_Center: {x: -0.74314046, y: 0.20550561, z: -0.1947838}
+--- !u!114 &5325179188506199288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7163538278751455227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56423b2dd3a92a14f8a7e51780e074f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8329008355359057771
 GameObject:
   m_ObjectHideFlags: 0
