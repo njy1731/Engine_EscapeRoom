@@ -48,7 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   point: {fileID: 0}
   Player: {fileID: 0}
-  damage: 100
+  damage: 40
   Light: []
   target: {x: 0, y: 0, z: 0}
   Speed: 0.3

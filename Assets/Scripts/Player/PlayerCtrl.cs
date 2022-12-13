@@ -11,15 +11,16 @@ public class PlayerCtrl : MonoBehaviour
     private KeyCode crouchKey = KeyCode.LeftControl; //키 할당
     private KeyCode runKey = KeyCode.LeftShift; //키 할당
     [SerializeField] private GameObject playerHitBox;
+    private GlitchEffect glitchEffect;
 
 
     [SerializeField] private float moveSpd; //플레이어의 이동속도
     private Vector3 moveForce; //플레이어 이동에 쓰이는 Vector
 
     [SerializeField]
-    public int MaxHp;
+    public float MaxHp;
     [SerializeField]
-    public int currHp;
+    public float currHp;
 
     private float gravity = -9.8f; //중력
     private Vector3 _velocity; //중력에 사용되는 Vector
@@ -57,6 +58,7 @@ public class PlayerCtrl : MonoBehaviour
         status = GetComponent<Status>();
         currHp = MaxHp;
         cameraShake = GetComponent<CameraShake>();
+        glitchEffect = GetComponentInChildren<GlitchEffect>();
     }
 
     void Update()
@@ -139,7 +141,7 @@ public class PlayerCtrl : MonoBehaviour
     //    }
     //}
 
-    public void PlayerDamage(int damage)
+    public void PlayerDamage(float damage)
     {
         currHp -= damage;
         if(currHp <= 0 )
@@ -151,6 +153,9 @@ public class PlayerCtrl : MonoBehaviour
     private void GameOver()
     {
         StartCoroutine(cameraShake.Shake());
+        glitchEffect.flipIntensity = 1f;
+        glitchEffect.intensity = 1f;
+        glitchEffect.colorIntensity = 1f;
     }
 
     private void OnTriggerStay(Collider other)

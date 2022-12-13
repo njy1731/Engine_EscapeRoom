@@ -1313,7 +1313,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7950553276722409826, guid: 936095af0c2b0eb4d81c3d849d88b1bc, type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7950553276722410976, guid: 936095af0c2b0eb4d81c3d849d88b1bc, type: 3}
       propertyPath: m_Layer
@@ -1909,6 +1909,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UIManager
       objectReference: {fileID: 0}
+    - target: {fileID: 1136228729412035399, guid: 40f9921b867802f4f9af09646e14028e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 40f9921b867802f4f9af09646e14028e, type: 3}
 --- !u!1 &1396620004 stripped
@@ -2459,8 +2463,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 51.3, y: 34}
-  m_SizeDelta: {x: 100, y: 60}
+  m_AnchoredPosition: {x: 38, y: 34}
+  m_SizeDelta: {x: 60, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2115474582
 MonoBehaviour:
@@ -2482,7 +2486,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 94907189ab8c0f1418d60220038b851e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 46094e2c9d26bbc478b38f64c7e90a0d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2559,7 +2563,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 112.9, y: 12.9}
+  m_AnchoredPosition: {x: 120.4, y: 12.9}
   m_SizeDelta: {x: 125, y: 25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2123870917

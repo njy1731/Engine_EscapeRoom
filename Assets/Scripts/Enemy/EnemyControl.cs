@@ -9,7 +9,7 @@ public class EnemyControl : MonoBehaviour
     [SerializeField]
     private GameObject Player;
     [SerializeField]
-    public int damage = 100;
+    public float damage = 10f;
     [SerializeField]
     private GameObject[] Light;
     [SerializeField]

@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public interface WorkFurniture
 {
     public void Work();
+    //public void CheckOpen();
 }
 
 public class DrawerCtrl : MonoBehaviour, WorkFurniture
