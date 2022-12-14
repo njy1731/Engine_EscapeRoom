@@ -14,6 +14,8 @@ public class PlayerCtrl : MonoBehaviour
     [SerializeField] private GameObject playerHitBox;
     private GlitchEffect glitchEffect;
 
+    public GameObject healthBar;
+    public GameObject gameoverCutscene;
 
     [SerializeField] private float moveSpd; //플레이어의 이동속도
     private Vector3 moveForce; //플레이어 이동에 쓰이는 Vector
@@ -145,6 +147,8 @@ public class PlayerCtrl : MonoBehaviour
     public void PlayerDamage(float damage)
     {
         currHp -= damage;
+        playerHitBox.SetActive(false);
+        Invoke("hitboxOn", 1f);
         if(currHp <= 0 )
         {
             GameOver();
@@ -153,10 +157,19 @@ public class PlayerCtrl : MonoBehaviour
 
     private void GameOver()
     {
-        StartCoroutine(cameraShake.Shake());
+        
         glitchEffect.flipIntensity = 1f;
         glitchEffect.intensity = 1f;
         glitchEffect.colorIntensity = 1f;
+        healthBar.SetActive(false);
+        StartCoroutine(cameraShake.Shake());
+        gameoverCutscene.SetActive(true);
+
+    }
+
+    private void hitboxOn()
+    {
+        playerHitBox.SetActive(true);
     }
 
     private void OnTriggerStay(Collider other)
