@@ -17,11 +17,12 @@ public class PickUpItem : MonoBehaviour
     [SerializeField] private float interactRange = 2.0f; //상호작용 거리
     [SerializeField] private GameObject Key = null; //아이템을 먹을때 SetActive 시켜주기위한 변수
     public bool ItemHeld = false; //아이템을 들고있는가?
+    private bool isOpenFurniture = false;
 
     [Header("UI Info")]
-    [SerializeField] private Text TakeItemText;
-    [SerializeField] private Text OpenText;
-    [SerializeField] private Text CloseText;
+    //[SerializeField] private Text TakeItemText;
+    [SerializeField] private Text interactText;
+    //[SerializeField] private Text CloseText;
 
     private void Update()
     {
@@ -103,27 +104,12 @@ public class PickUpItem : MonoBehaviour
 
         if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, interactRange, furnitureLayer))
         {
-            //if(!draw.opened || !closet.opened)
-            //{
-            //    OpenText.gameObject.SetActive(true);
-            //}
-
+            interactText.gameObject.SetActive(true);
+            
             if (Input.GetKeyDown(KeyCode.E))
             {
                 hit.collider.GetComponent<WorkFurniture>().Work();
-
-                //if (draw.opened || closet.opened)
-                //{
-                //    CloseText.gameObject.SetActive(true);
-                //    OpenText.gameObject.SetActive(false);
-                //}
             }
-
-            //else if(draw.opened || closet.opened)
-            //{
-            //    CloseText.gameObject.SetActive(false);
-            //    OpenText.gameObject.SetActive(false);
-            //}
         }
     }
 
@@ -136,17 +122,15 @@ public class PickUpItem : MonoBehaviour
 
         if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, interactRange, itemLayer))
         {
-            TakeItemText.gameObject.SetActive(true);
+            interactText.gameObject.SetActive(true);
 
             if (Input.GetKeyDown(KeyCode.E))
             {
                 Key.SetActive(true);
                 Destroy(hit.collider.gameObject);
-                ItemHeld = true;
-                //TakeItemText.gameObject.SetActive(false);
             }
         }
 
-        else TakeItemText.gameObject.SetActive(false);
+        else interactText.gameObject.SetActive(false);
     }
 }
