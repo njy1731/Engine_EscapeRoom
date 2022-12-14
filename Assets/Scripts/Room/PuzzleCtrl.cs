@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 using UnityEngine.UI;
 
 public class PuzzleCtrl : MonoBehaviour
@@ -75,6 +76,29 @@ public class PuzzleCtrl : MonoBehaviour
             return results;
         }
     }
+
+    public static class StringUtils
+    {
+        private const string PASSWORD_CHARS =
+             "0123456789abcdefghijklmnopqrstuvwxyz";
+
+            private static System.Random r = new System.Random();
+
+            public static string GeneratePassword(int length) =>
+            new string(PASSWORD_CHARS.OrderBy(x => r.Next()).Take(length).ToArray()); 
+    }
+
+    private void Generate()
+    {
+        var passwords = new HashSet<string>();
+
+        while (passwords.Count < 5)
+        {
+            //passwords.Add(GeneratePassword(10));
+        }
+    }
+
+    
 
     //public void RandomSign()
     //{
