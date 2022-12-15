@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class PuzzleCtrl : MonoBehaviour
 {
-    [SerializeField] private Transform[] SpawnPoint;
-    [SerializeField] GameObject[] TextPrefab;
+    //[SerializeField] GameObject[] PuzzleUI;
+    [SerializeField] Text[] TextPrefab;
     [SerializeField] private int maxCount;
     [SerializeField] private int n;
     private string password_str = "";
@@ -28,16 +28,6 @@ public class PuzzleCtrl : MonoBehaviour
 
     }
 
-    private void RandomPuzzle()
-    {
-        //RandomPasswordText.text = password_str;
-    }
-
-    private void RandomSpawnText()
-    {
-
-    }
-
     private void RandomPassword()
     {
         int[] numbers = PasswordGenerator.RandomNumbers(maxCount, n);
@@ -46,7 +36,8 @@ public class PuzzleCtrl : MonoBehaviour
         {
             password_str += numbers[i].ToString();
             //Debug.Log(numbers[i]);
-            Debug.Log(randomSign[i]);
+            TextPrefab[i].text += randomSign[i].ToString();
+            Debug.Log(TextPrefab[i].text);
         }
 
         Debug.Log(password_str);

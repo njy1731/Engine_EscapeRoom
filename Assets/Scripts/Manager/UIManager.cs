@@ -27,7 +27,7 @@ public class UIManager : MonoBehaviour
 
     public void ShowInteractText()
     {
-        InteractText.gameObject.SetActive(true); 
+        InteractText.gameObject.SetActive(true);
     }
 
     public void HideInteractText()
