@@ -142,15 +142,27 @@ public class PlayerCtrl : MonoBehaviour
 
         if (moveDir != Vector3.zero)
         {
-            footstepSound.enabled = true;
-            footstepSound.volume = Random.Range(0.7f, 1f);
-            footstepSound.pitch = Random.Range(0.8f, 1.1f);
+            StartCoroutine(FootStepStart());
         }
 
-        else footstepSound.enabled = false;
+        else StartCoroutine(FootStepStop());
 
         characterCtrl.Move(moveForce * Time.deltaTime);
         MoveTo(moveDir);
+    }
+
+    private IEnumerator FootStepStart()
+    {
+        footstepSound.enabled = true;
+        yield return new WaitForSeconds(1f);
+        footstepSound.volume = Random.Range(0.7f, 1f);
+        footstepSound.pitch = Random.Range(0.8f, 1.1f);
+    }
+
+    private IEnumerator FootStepStop()
+    {
+        footstepSound.enabled = false;
+        yield return new WaitForSeconds(1f);
     }
 
     public void PlayerDamage(float damage)
