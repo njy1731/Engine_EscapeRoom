@@ -14,10 +14,10 @@ public class deathSceneCtrl : MonoBehaviour
     void Start()
     {
         
-        Invoke("ChangeImage", 2f);
-        Invoke("FirstStep", 2.3f);
-        Invoke("SecondStep", 2.35f);
-        Invoke("ThirdStep", 2.4f);
+        Invoke("ChangeImage", 1f);
+        Invoke("FirstStep", 1.2f);
+        Invoke("SecondStep", 2.25f);
+        Invoke("ThirdStep", 2.3f);
 
     }
 
