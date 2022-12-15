@@ -15,6 +15,7 @@ TagManager:
   - Key
   - Furniture
   - PlayerHitBox
+  - Scroll
   layers:
   - Default
   - TransparentFX

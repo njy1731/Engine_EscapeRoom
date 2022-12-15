@@ -21,14 +21,18 @@ public class PickUpItem : MonoBehaviour
     [Header("PickUp, Open Info")]
     [SerializeField] private float interactRange = 2.0f; //상호작용 거리
     [SerializeField] private GameObject Key = null; //아이템을 먹을때 SetActive 시켜주기위한 변수
+    [SerializeField] private GameObject Scroll_PuzzleUI = null;
+    //[SerializeField] private GameObject CloseUIText = null;
     public bool ItemHeld = false; //아이템을 들고있는가?
     private bool isOpenFurniture = false;
+    private bool isScroll = false;
 
     [Header("UI Info")]
     [SerializeField] private Text interactText;
 
     private void Update()
     {
+        UICheck();
         PickUpItem_();
         WorkFurniture();
         //InteractObject();
@@ -66,11 +70,33 @@ public class PickUpItem : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.E))
             {
-                Key.SetActive(true);
-                Destroy(hit.collider.gameObject);
+                if (hit.collider.CompareTag("Key"))
+                {
+                    Key.SetActive(true);
+                    Destroy(hit.collider.gameObject);
+                }
+
+                if (hit.collider.CompareTag("Scroll"))
+                {
+                    isScroll = true;
+                    Scroll_PuzzleUI.SetActive(true);
+                    //CloseUIText.gameObject.SetActive(true);
+                }
             }
         }
 
         else interactText.gameObject.SetActive(false);
+    }
+
+    void UICheck()
+    {
+        if (isScroll)
+        {
+            if (Input.GetKeyDown(KeyCode.Tab))
+            {
+                Scroll_PuzzleUI.SetActive(false);
+                isScroll = false;
+            }
+        }
     }
 }
