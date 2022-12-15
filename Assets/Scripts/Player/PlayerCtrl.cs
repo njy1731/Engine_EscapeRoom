@@ -6,7 +6,7 @@ using UnityEngine.Rendering.PostProcessing;
 [RequireComponent(typeof(CharacterController))]
 public class PlayerCtrl : MonoBehaviour
 {
-    //[SerializeField] private AudioSource footstepSound;
+    [SerializeField] private AudioSource footstepSound;
     //private bool isMove = false;
 
     private CharacterController characterCtrl; //캐릭터 이동 시키는 컴포넌트
@@ -139,6 +139,16 @@ public class PlayerCtrl : MonoBehaviour
         }
 
         Vector3 moveDir = new Vector3(x, 0, z).normalized;
+
+        if (moveDir != Vector3.zero)
+        {
+            footstepSound.enabled = true;
+            footstepSound.volume = Random.Range(0.7f, 1f);
+            footstepSound.pitch = Random.Range(0.8f, 1.1f);
+        }
+
+        else footstepSound.enabled = false;
+
         characterCtrl.Move(moveForce * Time.deltaTime);
         MoveTo(moveDir);
     }
