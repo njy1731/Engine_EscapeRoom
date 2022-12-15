@@ -11,7 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/njy.unity
     guid: c8d6338307a1fe04594709429fd86a62
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/elevtorScene.unity
+    guid: c2596aea9b685744fafaa66374ca71eb
   m_configObjects: {}

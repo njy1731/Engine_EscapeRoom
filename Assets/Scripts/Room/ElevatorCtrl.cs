@@ -25,7 +25,7 @@ public class ElevatorCtrl : MonoBehaviour, WorkFurniture
 
     void animFalse()
     {
-        anim1.SetBool("Open", false);
-        anim2.SetBool("Open", false);
+        anim1.SetBool("Open", !opened);
+        anim2.SetBool("Open", !opened);
     }
 }
