@@ -15,7 +15,6 @@ public class KeySpawnCtrl : MonoBehaviour
     {
         if (!isItemSpawned)
         {
-            //Debug.Log("Spawned");
             int point = Random.Range(0, spawnpoint.Length);
             Instantiate(keyPrefab);
             keyPrefab.transform.position = spawnpoint[point].transform.position;

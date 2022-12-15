@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System.Linq;
 using UnityEngine.UI;
 
 public class PuzzleCtrl : MonoBehaviour
 {
+    //[SerializeField] GameObject[] PuzzleUI;
+    [SerializeField] Text[] TextPrefab;
     [SerializeField] private int maxCount;
     [SerializeField] private int n;
     private string password_str = "";
@@ -17,24 +18,14 @@ public class PuzzleCtrl : MonoBehaviour
     [SerializeField] private Text RandomPasswordText;
     [SerializeField] private GameObject randomPasswordObj;
 
-    void Start()
+    void Awake()
     {
-
+        RandomPassword();
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            RandomPassword();
-        }
 
-        RandomPuzzle();
-    }
-
-    private void RandomPuzzle()
-    {
-        RandomPasswordText.text = password_str;
     }
 
     private void RandomPassword()
@@ -45,7 +36,8 @@ public class PuzzleCtrl : MonoBehaviour
         {
             password_str += numbers[i].ToString();
             //Debug.Log(numbers[i]);
-            Debug.Log(randomSign[i]);
+            TextPrefab[i].text += randomSign[i].ToString();
+            Debug.Log(TextPrefab[i].text);
         }
 
         Debug.Log(password_str);
@@ -69,6 +61,7 @@ public class PuzzleCtrl : MonoBehaviour
 
                 results[i] = defaults[index];
                 defaults[index] = defaults[maxCount - 1];
+                defaults[index] = defaults[maxCount - 1];
 
                 maxCount--;
             }
@@ -76,38 +69,5 @@ public class PuzzleCtrl : MonoBehaviour
             return results;
         }
     }
-
-    public static class StringUtils
-    {
-        private const string PASSWORD_CHARS =
-             "0123456789abcdefghijklmnopqrstuvwxyz";
-
-            private static System.Random r = new System.Random();
-
-            public static string GeneratePassword(int length) =>
-            new string(PASSWORD_CHARS.OrderBy(x => r.Next()).Take(length).ToArray()); 
-    }
-
-    private void Generate()
-    {
-        var passwords = new HashSet<string>();
-
-        while (passwords.Count < 5)
-        {
-            //passwords.Add(GeneratePassword(10));
-        }
-    }
-
-    
-
-    //public void RandomSign()
-    //{
-    //    for (int i = 0; i < num; i++)
-    //    {
-    //        int rand = Random.Range(0, SignList.Count);
-    //        print(SignList[rand]);
-    //        SignList.RemoveAt(rand);
-    //    }
-    //}
 }
 

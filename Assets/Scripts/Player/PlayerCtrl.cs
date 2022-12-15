@@ -1,10 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.PostProcessing;
 
 [RequireComponent(typeof(CharacterController))]
 public class PlayerCtrl : MonoBehaviour
 {
+    //[SerializeField] private AudioSource footstepSound;
+    //private bool isMove = false;
+
     private CharacterController characterCtrl; //캐릭터 이동 시키는 컴포넌트
     private Status status; //캐릭터의 스텟을 받아옴
 
@@ -54,6 +58,7 @@ public class PlayerCtrl : MonoBehaviour
     /// </summary>
     void Awake()
     {
+        //footstepSound = GetComponent<AudioSource>();
         characterCtrl = GetComponent<CharacterController>();
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
@@ -61,6 +66,7 @@ public class PlayerCtrl : MonoBehaviour
         currHp = MaxHp;
         cameraShake = GetComponent<CameraShake>();
         glitchEffect = GetComponentInChildren<GlitchEffect>();
+        //footstepSound.Play();
     }
 
     void Update()
@@ -121,27 +127,21 @@ public class PlayerCtrl : MonoBehaviour
     /// </summary>
     void MovePlayer()
     {
+
         float x = Input.GetAxisRaw("Horizontal");
         float z = Input.GetAxisRaw("Vertical");
-
-        if(x != 0 || z != 0)
+        
+        if (x != 0 || z != 0)
         {
             bool isRun = false;
             isRun = Input.GetKey(runKey);
             MoveSpd = isRun == true ? status.RunSpd : status.WalkSpd;
         }
 
+        Vector3 moveDir = new Vector3(x, 0, z).normalized;
         characterCtrl.Move(moveForce * Time.deltaTime);
-        MoveTo(new Vector3(x, 0, z).normalized);
+        MoveTo(moveDir);
     }
-
-    //private void OnTriggerEnter(Collider other)
-    //{
-    //    if (other.CompareTag("NonLockedDoor"))
-    //    {
-    //        other.gameObject.GetComponent<Animator>().Play("DoorOpen");
-    //    }
-    //}
 
     public void PlayerDamage(float damage)
     {
