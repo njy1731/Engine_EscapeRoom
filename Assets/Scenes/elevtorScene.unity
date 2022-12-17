@@ -222,6 +222,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!114 &191298867 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1515780446320190691, guid: 5bd5105e5e7a9be4a8a83b6f47488436, type: 3}
+  m_PrefabInstance: {fileID: 3474637114824369548}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &230310099
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -291,7 +302,7 @@ GameObject:
   - component: {fileID: 250570261}
   - component: {fileID: 250570260}
   - component: {fileID: 250570259}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Upbotton (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -845,7 +856,7 @@ GameObject:
   - component: {fileID: 620868285}
   - component: {fileID: 620868284}
   - component: {fileID: 620868283}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: LightButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2294,6 +2305,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 08b53ca936d08244ba619f8b16fed049, type: 3}
+--- !u!1 &1858105023 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8723412150765126469, guid: 5bd5105e5e7a9be4a8a83b6f47488436, type: 3}
+  m_PrefabInstance: {fileID: 3474637114824369548}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1858105025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1858105023}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43929714e8b736b4e931fe62ac1bbd4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  image: {fileID: 191298867}
 --- !u!1 &1859011757 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2231306045182383091, guid: 68cad84da17415b4db1b4d1c34cec550, type: 3}
@@ -2848,6 +2877,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.13952558, y: 0.929173, z: 2.0859656}
   m_Center: {x: -0.040124673, y: 0.00000006506336, z: 0.00000045544428}
+--- !u!114 &2113500938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2113500932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab9434bf4ca71f74581118a9fd7ea708, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeManager: {fileID: 1858105023}
 --- !u!23 &601819864912447548
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2987,6 +3029,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3474637114108483176, guid: 5bd5105e5e7a9be4a8a83b6f47488436, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8723412150765126469, guid: 5bd5105e5e7a9be4a8a83b6f47488436, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
