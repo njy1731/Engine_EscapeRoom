@@ -31,8 +31,9 @@ public class PlayerCtrl : MonoBehaviour
     private float gravity = -9.8f; //중력
     private Vector3 _velocity; //중력에 사용되는 Vector
 
-
+    private bool isWalking = false;
     private bool isCrouch = false; //앉아 있는가 서있는가 판별
+    private bool isRun = false;
     [SerializeField] Transform playerCam = null; //플레이어가 앉을때 카메라의 이동
 
 
@@ -58,7 +59,7 @@ public class PlayerCtrl : MonoBehaviour
     /// </summary>
     void Awake()
     {
-        //footstepSound = GetComponent<AudioSource>();
+        StartCoroutine(FootStepStart());
         characterCtrl = GetComponent<CharacterController>();
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
@@ -66,7 +67,6 @@ public class PlayerCtrl : MonoBehaviour
         currHp = MaxHp;
         cameraShake = GetComponent<CameraShake>();
         glitchEffect = GetComponentInChildren<GlitchEffect>();
-        //footstepSound.Play();
     }
 
     void Update()
@@ -133,19 +133,12 @@ public class PlayerCtrl : MonoBehaviour
         
         if (x != 0 || z != 0)
         {
-            bool isRun = false;
             isRun = Input.GetKey(runKey);
             MoveSpd = isRun == true ? status.RunSpd : status.WalkSpd;
         }
 
         Vector3 moveDir = new Vector3(x, 0, z).normalized;
-
-        if (moveDir != Vector3.zero)
-        {
-            StartCoroutine(FootStepStart());
-        }
-
-        else StartCoroutine(FootStepStop());
+        isWalking = moveDir != Vector3.zero;
 
         characterCtrl.Move(moveForce * Time.deltaTime);
         MoveTo(moveDir);
@@ -153,16 +146,14 @@ public class PlayerCtrl : MonoBehaviour
 
     private IEnumerator FootStepStart()
     {
-        footstepSound.enabled = true;
-        yield return new WaitForSeconds(1f);
-        footstepSound.volume = Random.Range(0.7f, 1f);
-        footstepSound.pitch = Random.Range(0.8f, 1.1f);
-    }
-
-    private IEnumerator FootStepStop()
-    {
-        footstepSound.enabled = false;
-        yield return new WaitForSeconds(1f);
+        while (true)
+        {
+            yield return new WaitUntil(() => isWalking);
+            footstepSound.PlayOneShot(footstepSound.clip);
+            footstepSound.volume = Random.Range(0.7f, 1f);
+            footstepSound.pitch = Random.Range(1f, 1.1f);
+            yield return new WaitForSeconds(isRun ? 0.5f : 1f);
+        }
     }
 
     public void PlayerDamage(float damage)
