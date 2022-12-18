@@ -4,6 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using System;
 
+/// <summary>
+/// 가구에게 Work() 함수를 배정시켜 각각 애니메이션을 실행 할 수 있게하는 interface
+/// </summary>
 public interface WorkFurniture
 {
     public void Work();
@@ -15,27 +18,24 @@ public class PickUpItem : MonoBehaviour
     [SerializeField] private LayerMask itemLayer; //아이템 구별
     [SerializeField] private LayerMask furnitureLayer; //가구 구별
 
-    //private DrawerCtrl draw;
-    //private ClosetCtrl closet;
-
     [Header("PickUp, Open Info")]
     [SerializeField] private float interactRange = 2.0f; //상호작용 거리
     [SerializeField] private GameObject Key = null; //아이템을 먹을때 SetActive 시켜주기위한 변수
-    [SerializeField] private GameObject Scroll_PuzzleUI = null;
-    //[SerializeField] private GameObject CloseUIText = null;
+    [SerializeField] private GameObject Scroll_PuzzleUI = null; //퍼즐의 힌트 UI Prefab
+
+    [Header("Bool Info")]
     public bool ItemHeld = false; //아이템을 들고있는가?
-    private bool isOpenFurniture = false;
-    private bool isScroll = false;
+    private bool isOpenFurniture = false; //가구가 열렸는가?
+    private bool isScroll = false; //스크롤 아이템을 먹었는가?
 
     [Header("UI Info")]
-    [SerializeField] private Text interactText;
+    [SerializeField] private Text interactText; // [E] UI SetActive(True, False)
 
     private void Update()
     {
-        UICheck();
+        ScrollClose();
         PickUpItem_();
         WorkFurniture();
-        //InteractObject();
         Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward), Color.red);
     }
 
@@ -80,7 +80,6 @@ public class PickUpItem : MonoBehaviour
                 {
                     isScroll = true;
                     Scroll_PuzzleUI.SetActive(true);
-                    //CloseUIText.gameObject.SetActive(true);
                 }
             }
         }
@@ -88,7 +87,10 @@ public class PickUpItem : MonoBehaviour
         else interactText.gameObject.SetActive(false);
     }
 
-    void UICheck()
+    /// <summary>
+    /// 스크롤 UI를 닫는 함수
+    /// </summary>
+    void ScrollClose()
     {
         if (isScroll)
         {

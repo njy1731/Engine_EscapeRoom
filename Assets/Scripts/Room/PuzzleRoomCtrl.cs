@@ -3,29 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PuzzleCtrl : MonoBehaviour
+public class PuzzleRoomCtrl : MonoBehaviour
 {
-    //[SerializeField] GameObject[] PuzzleUI;
-    [SerializeField] Text[] TextPrefab;
+    [SerializeField] private Text[] TextPrefab;
     [SerializeField] private int maxCount;
     [SerializeField] private int n;
     private string password_str = "";
-    private bool isTake = false;
-    private int length_ = 10;
-
-    [Header("UI Info")]
-    [SerializeField] private Image PasswordImage;
-    [SerializeField] private Text RandomPasswordText;
-    [SerializeField] private GameObject randomPasswordObj;
 
     void Awake()
     {
         RandomPassword();
-    }
-
-    private void Update()
-    {
-
     }
 
     private void RandomPassword()
@@ -35,12 +22,10 @@ public class PuzzleCtrl : MonoBehaviour
         for (int i = 0; i < numbers.Length; i++)
         {
             password_str += numbers[i].ToString();
-            //Debug.Log(numbers[i]);
             TextPrefab[i].text += randomSign[i].ToString();
             Debug.Log(TextPrefab[i].text);
         }
-
-        Debug.Log(password_str);
+        //Debug.Log(password_str);
     }
 
     public static class PasswordGenerator
@@ -70,4 +55,3 @@ public class PuzzleCtrl : MonoBehaviour
         }
     }
 }
-
