@@ -25,7 +25,6 @@ public class PuzzleRoomCtrl : MonoBehaviour
             TextPrefab[i].text += randomSign[i].ToString();
             Debug.Log(TextPrefab[i].text);
         }
-        //Debug.Log(password_str);
     }
 
     public static class PasswordGenerator

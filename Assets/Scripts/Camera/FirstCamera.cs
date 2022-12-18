@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FirstCamera : MonoBehaviour
 {
-    [SerializeField] private float mouseSensitivity = 100f; //마우스가 움직이는 속도 = 감도
+    [SerializeField] [Range(0, 250f)] private float mouseSensitivity = 100f; //마우스가 움직이는 속도 = 감도
     [SerializeField] private Transform player = null; //플레이어를 바라보는 방향으로 움직이기위해 사용하는 변수
     float xRotation = 0f; //x의 회전값
 

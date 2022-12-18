@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class HideRoom : MonoBehaviour
 {
-    //public Text[] TextPrefab;
     public GameObject player;
     public GameObject room;
     public Vector3 roomSpot;

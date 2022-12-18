@@ -4,20 +4,13 @@ using UnityEngine;
 
 public class EnemyControl : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject point;
-    [SerializeField]
-    private GameObject Player;
-    [SerializeField]
+    [SerializeField] private GameObject point;
+    [SerializeField] private GameObject Player;
+    [SerializeField] private GameObject[] Light;
+    [SerializeField] private Vector3 target;
+    [SerializeField] private float Speed;
+    [SerializeField] private Vector3 playerPos;
     public float damage = 10f;
-    [SerializeField]
-    private GameObject[] Light;
-    [SerializeField]
-    private Vector3 target;
-    [SerializeField]
-    private float Speed;
-    [SerializeField]
-    private Vector3 playerPos;
 
    
     void Start()

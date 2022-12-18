@@ -21,19 +21,23 @@ public class PickUpItem : MonoBehaviour
     [Header("PickUp, Open Info")]
     [SerializeField] private float interactRange = 2.0f; //상호작용 거리
     [SerializeField] private GameObject Key = null; //아이템을 먹을때 SetActive 시켜주기위한 변수
-    [SerializeField] private GameObject Scroll_PuzzleUI = null; //퍼즐의 힌트 UI Prefab
+    [SerializeField] private GameObject Scroll_PuzzleUI = null; //퍼즐의 힌트 UI
+    [SerializeField] private GameObject KeyPadUI = null; //비밀번호 입력을하는 KeyPad UI
+    [SerializeField] private GameObject CroosHair = null; //플레이어의 조준선
 
     [Header("Bool Info")]
     public bool ItemHeld = false; //아이템을 들고있는가?
     private bool isOpenFurniture = false; //가구가 열렸는가?
     private bool isScroll = false; //스크롤 아이템을 먹었는가?
+    private bool isKeyPad = false; //KeyPad UI가 열렸는가?
 
     [Header("UI Info")]
     [SerializeField] private Text interactText; // [E] UI SetActive(True, False)
 
     private void Update()
     {
-        ScrollClose();
+        HintScrollUIClose();
+        KeyPadUIClose();
         PickUpItem_();
         WorkFurniture();
         Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward), Color.red);
@@ -80,6 +84,17 @@ public class PickUpItem : MonoBehaviour
                 {
                     isScroll = true;
                     Scroll_PuzzleUI.SetActive(true);
+                    CroosHair.SetActive(false);
+                }
+
+                if (hit.collider.CompareTag("KeyPad"))
+                {
+                    Time.timeScale = 0;
+                    Cursor.lockState = CursorLockMode.None;
+                    Cursor.visible = true;
+                    isKeyPad = true;
+                    KeyPadUI.SetActive(true);
+                    CroosHair.SetActive(false);
                 }
             }
         }
@@ -90,14 +105,34 @@ public class PickUpItem : MonoBehaviour
     /// <summary>
     /// 스크롤 UI를 닫는 함수
     /// </summary>
-    void ScrollClose()
+    void HintScrollUIClose()
     {
         if (isScroll)
         {
             if (Input.GetKeyDown(KeyCode.Tab))
             {
-                Scroll_PuzzleUI.SetActive(false);
                 isScroll = false;
+                Scroll_PuzzleUI.SetActive(false);
+                CroosHair.SetActive(true);
+            }
+        }
+    }
+
+    /// <summary>
+    /// KeyPad UI를 닫는 함수
+    /// </summary>
+    void KeyPadUIClose()
+    {
+        if (isKeyPad)
+        {
+            if (Input.GetKeyDown(KeyCode.Tab))
+            {
+                Time.timeScale = 1;
+                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
+                isKeyPad = false;
+                KeyPadUI.SetActive(false);
+                CroosHair.SetActive(true);
             }
         }
     }
