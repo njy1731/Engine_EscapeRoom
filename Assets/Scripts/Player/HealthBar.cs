@@ -25,6 +25,8 @@ public class HealthBar : MonoBehaviour
         playerCtrl = GetComponent<PlayerCtrl>();
         glitchEffect = GetComponentInChildren<GlitchEffect>();
         maxHp = playerCtrl.MaxHp;
+        volume = GetComponent<PostProcessVolume>();
+        vignette = GetComponent<Vignette>();
     }
 
     void Update()
