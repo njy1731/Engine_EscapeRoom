@@ -39,7 +39,7 @@ public class HealthBar : MonoBehaviour
             glitchEffect.intensity = 0.5f;
             glitchEffect.colorIntensity = 0.5f;
             //volume.profile.TryGetSettings(out vignette);
-            vignette.intensity.value = Mathf.Lerp(0.5f, 1f, lerpSpd);
+            //vignette.intensity.value = Mathf.Lerp(0.5f, 1f, lerpSpd);
         }
         if (playerCtrl.currHp <= 10)
         {
@@ -48,7 +48,7 @@ public class HealthBar : MonoBehaviour
             glitchEffect.intensity = 0.8f;
             glitchEffect.colorIntensity = 0.8f;
             //volume.profile.TryGetSettings(out CA);
-            CA.intensity.value = Mathf.Lerp(1f, 0.5f, lerpSpd);
+            //CA.intensity.value = Mathf.Lerp(1f, 0.5f, lerpSpd);
         }
     }
 }
