@@ -6,12 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/njy.unity
+    guid: c8d6338307a1fe04594709429fd86a62
+  - enabled: 1
     path: Assets/Scenes/elevtorScene.unity
     guid: c2596aea9b685744fafaa66374ca71eb
   - enabled: 1
     path: Assets/Scenes/jhj.unity
     guid: ad99b3d7b4862e94a87710cd042b04cf
-  - enabled: 1
-    path: Assets/Scenes/njy.unity
-    guid: c8d6338307a1fe04594709429fd86a62
   m_configObjects: {}
