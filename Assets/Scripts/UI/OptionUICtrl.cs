@@ -6,23 +6,63 @@ using UnityEngine.UI;
 
 public class OptionUICtrl : MonoBehaviour
 {
+    [Header("Object")]
     [SerializeField] private GameObject OptionUI;
-    [SerializeField] private GameObject VolumeUI;
-    [SerializeField] private Slider VolumeSlider;
-    [SerializeField] private Text VolumeValueText;
-    [SerializeField] private GameObject SenstiveUI;
-    //[SerializeField] private Slider SenstiveSlider;
-    [SerializeField] private GameObject ResumeButton;
-    [SerializeField] private GameObject BackButton;
+    [SerializeField] private GameObject ResetUI;
 
-    //private AudioMixer audioMixer;
+    [Header("Button")]
+    [SerializeField] private Button ResetButton;
+    [SerializeField] private Button ResumeButton;
+
+    [Header("Slider")]
+    [SerializeField] private Slider VolumeSlider;
+    [SerializeField] private Slider SenstiveSlider;
+
+    [Header("Text")]
+    [SerializeField] private Text VolumeValueText;
+    [SerializeField] private Text SenstiveValueText;
+
+    [Header("Value")]
+    private float defaultVolume = 1.0f;
+    private float defaultSens = 100f;
 
     public void SetVolume(float volume)
     {
         AudioListener.volume = volume;
-        VolumeValueText.text = volume.ToString("F0");
-        //audioMixer.SetFloat("volume", volume);
-        //Debug.Log(volume);
+        VolumeValueText.text = volume.ToString("F1");
+    }
+
+    public void SetSenstive(float sens)
+    {
+        FirstCamera.mouseSensitivity = sens;
+        SenstiveValueText.text = sens.ToString("F0");
+    }
+
+    public void ResumeButtonDown()
+    {
+        OptionUI.SetActive(false);
+    }
+
+    public void ResetButtonDown()
+    {
+        ResetUI.SetActive(true);
+        //ResetButton.interactable = false;
+        //ResumeButton.interactable = false;
+    }
+
+    public void ResetUI_ApplyButtonDown()
+    {
+        AudioListener.volume = defaultVolume;
+        FirstCamera.mouseSensitivity = defaultSens;
+        VolumeValueText.text = defaultVolume.ToString("F1");
+        SenstiveValueText.text = defaultSens.ToString("F0");
+    }
+
+    public void ResetUI_BackButtonDown()
+    {
+        ResetUI.SetActive(true);
+        //ResetButton.interactable = true;
+        //ResumeButton.interactable = true;
     }
 }
 

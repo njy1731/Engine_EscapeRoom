@@ -28,8 +28,8 @@ public class PuzzleRoomCtrl : MonoBehaviour
         {
             password_str += numbers[i].ToString();
             TextPrefab[i].text += randomSign[i].ToString();
-            Debug.Log(password_str);
         }
+        Debug.Log(password_str);
     }
 
     /// <summary>

@@ -6,32 +6,18 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
-    public static UIManager instance; //ΩÃ±€≈Ê ∆–≈œ
+    [SerializeField] private GameObject OptionUI;
 
-    [Header("Text Info")]
-    public Text InteractText; // [  ]
-
-    [Header("Image Info")]
-    private Image passwordHintImage;
-
-    void Awake()
+    private void Update()
     {
-        if (instance == null)
+        OnOptionUIOpenKeyDown();
+    }
+
+    public void OnOptionUIOpenKeyDown()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
-            instance = this;
-            DontDestroyOnLoad(this.gameObject);
+            OptionUI.SetActive(true);
         }
-
-        else Destroy(this.gameObject);
-    }
-
-    public void ShowInteractText()
-    {
-        InteractText.gameObject.SetActive(true);
-    }
-
-    public void HideInteractText()
-    {
-        InteractText.gameObject.SetActive(false);
     }
 }
