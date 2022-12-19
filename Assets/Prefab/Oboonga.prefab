@@ -50,11 +50,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   point: {fileID: 0}
   Player: {fileID: 0}
-  damage: 100
   Light: []
   target: {x: 0, y: 0, z: 0}
-  Speed: 0.6
+  Speed: 0.3
   playerPos: {x: 0, y: 0, z: 0}
+  damage: 100
 --- !u!65 &3956828815921757193
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -104,10 +104,10 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 15
+  MinDistance: 50
+  MaxDistance: 200
   Pan2D: 0
-  rolloffMode: 2
+  rolloffMode: 0
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -167,7 +167,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -182,7 +182,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 0.2777778
       inSlope: 0
       outSlope: 0
       tangentMode: 0
