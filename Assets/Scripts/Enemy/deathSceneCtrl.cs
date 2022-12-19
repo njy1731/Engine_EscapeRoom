@@ -15,9 +15,9 @@ public class deathSceneCtrl : MonoBehaviour
     {
         
         Invoke("ChangeImage", 1f);
-        Invoke("FirstStep", 1.2f);
-        Invoke("SecondStep", 2.25f);
-        Invoke("ThirdStep", 2.3f);
+        Invoke("FirstStep", 1.3f);
+        Invoke("SecondStep", 1.35f);
+        Invoke("ThirdStep", 1.4f);
 
     }
 
