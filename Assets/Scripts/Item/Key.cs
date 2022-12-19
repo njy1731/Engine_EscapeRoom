@@ -8,7 +8,7 @@ public class Key : MonoBehaviour
     {
         if (other.CompareTag("Door"))
         {
-            //this.gameObject.SetActive(false);
+            this.gameObject.SetActive(false);
             other.GetComponentInParent<Animator>().Play("DoorOpen");
         }
     }

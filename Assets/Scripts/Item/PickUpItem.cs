@@ -14,6 +14,8 @@ public interface WorkFurniture
 
 public class PickUpItem : MonoBehaviour
 {
+    [HideInInspector] public static Action closeKeyPadUI;
+
     [Header("Layer Info")]
     [SerializeField] private LayerMask itemLayer; //아이템 구별
     [SerializeField] private LayerMask furnitureLayer; //가구 구별
@@ -27,12 +29,16 @@ public class PickUpItem : MonoBehaviour
 
     [Header("Bool Info")]
     public bool ItemHeld = false; //아이템을 들고있는가?
-    private bool isOpenFurniture = false; //가구가 열렸는가?
     private bool isScroll = false; //스크롤 아이템을 먹었는가?
     private bool isKeyPad = false; //KeyPad UI가 열렸는가?
 
     [Header("UI Info")]
     [SerializeField] private Text interactText; // [E] UI SetActive(True, False)
+
+    private void Awake()
+    {
+        closeKeyPadUI += KeyPadUIClose;
+    }
 
     private void Update()
     {
@@ -125,7 +131,7 @@ public class PickUpItem : MonoBehaviour
     {
         if (isKeyPad)
         {
-            if (Input.GetKeyDown(KeyCode.Tab))
+            if (Input.GetKeyDown(KeyCode.Tab) || KeyPadCtrl.isPasswordAccess == true)
             {
                 Time.timeScale = 1;
                 Cursor.lockState = CursorLockMode.Locked;
