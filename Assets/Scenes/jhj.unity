@@ -2544,6 +2544,7 @@ MonoBehaviour:
   doors:
   - {fileID: 124312249}
   - {fileID: 615071709}
+  buttonSound: {fileID: 0}
 --- !u!65 &1614906803
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2687,6 +2688,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3474637114108483176, guid: 5bd5105e5e7a9be4a8a83b6f47488436, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3474637114108483177, guid: 5bd5105e5e7a9be4a8a83b6f47488436, type: 3}
+      propertyPath: m_PlayOnAwake
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3474637114108483182, guid: 5bd5105e5e7a9be4a8a83b6f47488436, type: 3}

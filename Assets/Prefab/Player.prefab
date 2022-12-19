@@ -424,6 +424,8 @@ MonoBehaviour:
   interactRange: 5
   Key: {fileID: 3474637114803149849}
   Scroll_PuzzleUI: {fileID: 0}
+  KeyPadUI: {fileID: 0}
+  CroosHair: {fileID: 0}
   ItemHeld: 0
   interactText: {fileID: 3474637115088424261}
 --- !u!114 &3474637114082651028
@@ -515,12 +517,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   footstepSound: {fileID: 3474637114108483177}
   playerHitBox: {fileID: 3474637115187170898}
+  playerCam: {fileID: 3474637114082651035}
   healthBar: {fileID: 0}
   gameoverCutscene: {fileID: 0}
-  moveSpd: 5
   MaxHp: 100
   currHp: 0
-  playerCam: {fileID: 3474637114082651035}
+  moveSpd: 5
   crouchSpd: 0.1
   crouchHeight: 1
   standHeight: 2
@@ -564,7 +566,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: d5e6a24cc0eef7d45a85f5102989f323, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
