@@ -673,19 +673,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   door1: {fileID: 124312249}
   door2: {fileID: 615071709}
---- !u!65 &292940657
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 292940654}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 5, y: 10, z: 6}
-  m_Center: {x: 0, y: 5, z: 0}
 --- !u!1 &347244799 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2674788723994221730, guid: 68291c6ed69f72b4c8c1b120ce1a5fbe, type: 3}
@@ -2279,6 +2266,20 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1067657521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1067657514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad84dd9e3bc16b94f95ac607e00e89ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  door1: {fileID: 124312249}
+  door2: {fileID: 615071709}
 --- !u!1 &1072578535 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2674788723698330082, guid: 68291c6ed69f72b4c8c1b120ce1a5fbe, type: 3}
@@ -2865,6 +2866,10 @@ PrefabInstance:
       propertyPath: gameoverCutscene
       value: 
       objectReference: {fileID: 827806907}
+    - target: {fileID: 3474637115187170924, guid: 5bd5105e5e7a9be4a8a83b6f47488436, type: 3}
+      propertyPath: m_Center.y
+      value: -0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 4943929261297900755, guid: 5bd5105e5e7a9be4a8a83b6f47488436, type: 3}
       propertyPath: m_Name
       value: Player

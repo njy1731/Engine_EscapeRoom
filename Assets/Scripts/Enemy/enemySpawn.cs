@@ -6,7 +6,7 @@ public class enemySpawn : MonoBehaviour
 { 
     //이 스크립트는 GameManager로 옮길 예정? 입니다.
     [SerializeField]
-    private float waitTime = 10f;
+    private float waitTime = 5f;
     private float firstWaitTime;
     private float currTime;
     [SerializeField]

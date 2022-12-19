@@ -15,7 +15,7 @@ public class playerArrive : MonoBehaviour
         anim2 = door2.GetComponent<Animator>();
     }
 
-    void OnTriggerStay(Collider other)
+    void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("PlayerHitBox") == true)
         {
@@ -23,7 +23,7 @@ public class playerArrive : MonoBehaviour
             anim2.SetBool("Open", true);
         }
     }
-    private void OnTriggerExit(Collider other)
+    void OnTriggerExit(Collider other)
     {
         if (other.gameObject.CompareTag("PlayerHitBox") == true)
         {
