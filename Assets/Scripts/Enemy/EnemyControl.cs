@@ -64,7 +64,5 @@ public class EnemyControl : MonoBehaviour
                 other.GetComponentInParent<PlayerCtrl>().PlayerDamage(damage);
             }
         }    
-
     }
-
 }

@@ -9,7 +9,6 @@ public class KeyPadCtrl : MonoBehaviour
     [HideInInspector] public static bool isPasswordAccess;
 
     [Header("Sound Info")]
-    [SerializeField] private AudioSource KeyPadAccess;
     [SerializeField] private AudioSource KeyPadFaild;
 
     [Header("UI Info")]
@@ -33,16 +32,13 @@ public class KeyPadCtrl : MonoBehaviour
     {
         if(password == PuzzleRoomCtrl.password_str)
         {
-            Debug.Log("Password Accessed");
             isPasswordAccess = true;
-            KeyPadAccess.Play();
             DeleteKeyPadNum();
             PickUpItem.closeKeyPadUI();
         }
 
         else
         {
-            Debug.Log("Worng Password");
             KeyPadFaild.Play();
         }
     }

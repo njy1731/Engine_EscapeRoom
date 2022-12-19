@@ -115,7 +115,7 @@ public class PickUpItem : MonoBehaviour
     {
         if (isScroll)
         {
-            if (Input.GetKeyDown(KeyCode.Tab))
+            if (Input.GetKeyDown(KeyCode.Escape))
             {
                 isScroll = false;
                 Scroll_PuzzleUI.SetActive(false);
@@ -131,7 +131,7 @@ public class PickUpItem : MonoBehaviour
     {
         if (isKeyPad)
         {
-            if (Input.GetKeyDown(KeyCode.Tab) || KeyPadCtrl.isPasswordAccess == true)
+            if (Input.GetKeyDown(KeyCode.Escape) || KeyPadCtrl.isPasswordAccess == true)
             {
                 Time.timeScale = 1;
                 Cursor.lockState = CursorLockMode.Locked;
