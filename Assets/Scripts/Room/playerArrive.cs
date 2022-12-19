@@ -27,6 +27,7 @@ public class playerArrive : MonoBehaviour
     {
         if (other.gameObject.CompareTag("PlayerHitBox") == true)
         {
+            Debug.Log(".");
             anim1.SetBool("Open", false);
             anim2.SetBool("Open", false);
         }
