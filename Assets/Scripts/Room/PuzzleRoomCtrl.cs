@@ -8,7 +8,7 @@ public class PuzzleRoomCtrl : MonoBehaviour
     [SerializeField] private Text[] TextPrefab;
     [SerializeField] private int maxCount;
     [SerializeField] private int n;
-    private string password_str = "";
+    public static string password_str = "";
 
     void Awake()
     {

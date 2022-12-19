@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Playsound : MonoBehaviour 
+public class KeyPadSound : MonoBehaviour 
 {
-	public void Clicky (){
+	public void KeyPadClick () {
 		GetComponent<AudioSource>().Play();
 	}
 }
