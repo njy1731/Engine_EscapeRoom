@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8932875624332904222}
   - component: {fileID: 6529440902083198955}
   - component: {fileID: 6757018064905707776}
+  - component: {fileID: 8824814021016899011}
   m_Layer: 7
   m_Name: Keypad
   m_TagString: KeyPad
@@ -102,3 +103,17 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 3500258507535584380, guid: 2bf1cb1f16fa9c944b146ff1826c4d2a, type: 3}
+--- !u!114 &8824814021016899011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1845112118691542922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9198810c315ce24a86843555168ac7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  access: {fileID: 0}
+  faild: {fileID: 0}

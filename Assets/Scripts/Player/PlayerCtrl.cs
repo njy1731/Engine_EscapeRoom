@@ -61,8 +61,6 @@ public class PlayerCtrl : MonoBehaviour
     {
         StartCoroutine(FootStepStart());
         characterCtrl = GetComponent<CharacterController>();
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
         status = GetComponent<Status>();
         currHp = MaxHp;
         cameraShake = GetComponent<CameraShake>();
@@ -132,7 +130,6 @@ public class PlayerCtrl : MonoBehaviour
     /// </summary>
     void MovePlayer()
     {
-
         float x = Input.GetAxisRaw("Horizontal");
         float z = Input.GetAxisRaw("Vertical");
         
@@ -203,6 +200,7 @@ public class PlayerCtrl : MonoBehaviour
                 }
 
             }
+
             else
             {
                 playerHitBox.SetActive(false);

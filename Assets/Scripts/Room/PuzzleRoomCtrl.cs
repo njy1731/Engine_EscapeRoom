@@ -5,16 +5,21 @@ using UnityEngine.UI;
 
 public class PuzzleRoomCtrl : MonoBehaviour
 {
+    [Header("Puzzle Info")]
     [SerializeField] private Text[] TextPrefab;
     [SerializeField] private int maxCount;
     [SerializeField] private int n;
-    public static string password_str = "";
+
+    [HideInInspector] public static string password_str = "";
 
     void Awake()
     {
         RandomPassword();
     }
 
+    /// <summary>
+    /// 랜덤으로 생성한 비밀번호를 ToString() => 문자열로 변환하여 Text로 보여주는 함수
+    /// </summary>
     private void RandomPassword()
     {
         int[] numbers = PasswordGenerator.RandomNumbers(maxCount, n);
@@ -23,10 +28,13 @@ public class PuzzleRoomCtrl : MonoBehaviour
         {
             password_str += numbers[i].ToString();
             TextPrefab[i].text += randomSign[i].ToString();
-            Debug.Log(TextPrefab[i].text);
+            Debug.Log(password_str);
         }
     }
 
+    /// <summary>
+    /// 랜덤 비밀번호를 생성하는 클래스, 함수
+    /// </summary>
     public static class PasswordGenerator
     {
         public static int[] RandomNumbers(int maxCount, int n)
