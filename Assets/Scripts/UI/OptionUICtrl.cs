@@ -41,28 +41,36 @@ public class OptionUICtrl : MonoBehaviour
     public void ResumeButtonDown()
     {
         OptionUI.SetActive(false);
+        Time.timeScale = 1;
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     public void ResetButtonDown()
     {
         ResetUI.SetActive(true);
-        //ResetButton.interactable = false;
-        //ResumeButton.interactable = false;
+        ResetButton.interactable = false;
+        ResumeButton.interactable = false;
     }
 
     public void ResetUI_ApplyButtonDown()
     {
         AudioListener.volume = defaultVolume;
         FirstCamera.mouseSensitivity = defaultSens;
+        VolumeSlider.value = defaultVolume;
+        SenstiveSlider.value = defaultSens;
         VolumeValueText.text = defaultVolume.ToString("F1");
         SenstiveValueText.text = defaultSens.ToString("F0");
+        ResetUI.SetActive(false);
+        ResetButton.interactable = true;
+        ResumeButton.interactable = true;
     }
 
     public void ResetUI_BackButtonDown()
     {
-        ResetUI.SetActive(true);
-        //ResetButton.interactable = true;
-        //ResumeButton.interactable = true;
+        ResetUI.SetActive(false);
+        ResetButton.interactable = true;
+        ResumeButton.interactable = true;
     }
 }
 
