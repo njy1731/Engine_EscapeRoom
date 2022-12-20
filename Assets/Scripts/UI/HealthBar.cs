@@ -28,20 +28,12 @@ public class HealthBar : MonoBehaviour
     {
         HpImage.fillAmount = playerCtrl.currHp/ maxHp;
         Hptext.text = "" + HpImage.fillAmount * 100 + "/100";
-
-        if(playerCtrl.currHp <= 50)
-        {
-            HpIcon.sprite = halfIcon;
-            glitchEffect.flipIntensity = 0.5f;
-            glitchEffect.intensity = 0.5f;
-            glitchEffect.colorIntensity = 0.5f;
-        }
-        if (playerCtrl.currHp <= 10)
+        if (playerCtrl.currHp <= 30)
         {
             HpIcon.sprite = lowIcon;
-            glitchEffect.flipIntensity = 0.8f;
-            glitchEffect.intensity = 0.8f;
-            glitchEffect.colorIntensity = 0.8f;
+            glitchEffect.flipIntensity = 0f;
+            glitchEffect.intensity = 0f;
+            glitchEffect.colorIntensity = 0f;
             LowHPEffect.SetActive(true);
         }
     }
