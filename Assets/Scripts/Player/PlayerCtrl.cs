@@ -198,7 +198,6 @@ public class PlayerCtrl : MonoBehaviour
                 {
                     playerHitBox.SetActive(true);
                 }
-
             }
 
             else
@@ -206,7 +205,6 @@ public class PlayerCtrl : MonoBehaviour
                 playerHitBox.SetActive(false);
             }
         }
-        
     }
 
     private void OnTriggerExit(Collider other)
