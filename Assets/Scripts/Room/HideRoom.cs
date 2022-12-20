@@ -10,28 +10,38 @@ public class HideRoom : MonoBehaviour
     public Vector3 roomSpot;
     public float distance;
 
+    public DoorCtrl _door;
+
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        
+
+        _door = transform.Find("WholeRoom")?.Find("Door")?.GetComponentInChildren<DoorCtrl>();
+
         roomSpot = this.gameObject.transform.position;
     }
 
+    public void OpenDoor()
+    {
+        _door.OpenDoor();
+    }
+
+
     void Update()
     {
- 
+
         distance = roomSpot.z - player.transform.position.z;
-        if (distance > 30 )
+        if (distance > 30)
         {
             room.SetActive(false);
         }
 
-        else if(distance < -60 )
+        else if (distance < -60)
         {
             room.SetActive(false);
         }
 
-        else 
+        else
         {
             room.SetActive(true);
         }

@@ -10,7 +10,7 @@ public class PuzzleRoomCtrl : MonoBehaviour
     [SerializeField] private int maxCount;
     [SerializeField] private int n;
 
-    [HideInInspector] public static string password_str = "";
+    [HideInInspector] public string password_str = "";
 
     void Awake()
     {
@@ -29,7 +29,8 @@ public class PuzzleRoomCtrl : MonoBehaviour
             password_str += numbers[i].ToString();
             TextPrefab[i].text += randomSign[i].ToString();
         }
-        Debug.Log(password_str);
+
+        KeyPadCtrl.hideRoomDictionary.Add(password_str, this.GetComponentInParent<HideRoom>());
     }
 
     /// <summary>

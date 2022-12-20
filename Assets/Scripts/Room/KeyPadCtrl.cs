@@ -16,30 +16,46 @@ public class KeyPadCtrl : MonoBehaviour
     [SerializeField] private Text keypadText;
 
     [Header("KeyPad Info")]
-    private string password;
+    public string password;
     private int numIndex;
+    // ºñ¹ø, ¹æ
+    public static Dictionary<string, HideRoom> hideRoomDictionary = new Dictionary<string, HideRoom>();
     #endregion
 
     #region Function's
     public void KeyPadInput(string numbers)
     {
-        if(numIndex < 4)
+        if (numIndex < 4)
         {
             numIndex++;
             password += numbers;
             keypadText.text = password;
+            Debug.Log("A");
         }
     }
 
+    //public void EnterKeyPad()
+    //{
+    //    //if(password == PuzzleRoomCtrl.password_str)
+    //    //{
+    //    //    isPasswordAccess = true;
+    //    //    DeleteKeyPadNum();
+    //    //    UIManager.closeKeyPadUI();
+    //    //}
+    //    //else
+    //    //{
+    //    //    KeyPadFaild.Play();
+    //    //}
+    //}
+
     public void EnterKeyPad()
     {
-        if(password == PuzzleRoomCtrl.password_str)
+        if(hideRoomDictionary.ContainsKey(password))
         {
-            isPasswordAccess = true;
+            hideRoomDictionary[password].OpenDoor();
             DeleteKeyPadNum();
             UIManager.closeKeyPadUI();
         }
-
         else
         {
             KeyPadFaild.Play();

@@ -6,9 +6,14 @@ public class DoorCtrl : MonoBehaviour
 {
     [SerializeField] private Animator DoorAni;
     
-    void Update()
+    //void Update()
+    //{
+    //    KeyPadAccessed();
+    //}
+
+    public void OpenDoor()
     {
-        KeyPadAccessed();
+        DoorAni.Play("DoorOpen");
     }
 
     private void KeyPadAccessed()
