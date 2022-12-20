@@ -14,6 +14,7 @@ public interface WorkFurniture
 
 public class PickUpItem : MonoBehaviour
 {
+    #region Variable
     private static PickUpItem instance;
     public static PickUpItem GetInstance() { return instance; }
 
@@ -35,10 +36,11 @@ public class PickUpItem : MonoBehaviour
     public bool isScroll = false; //스크롤 아이템을 먹었는가?
     public bool isKeyPad = false; //KeyPad UI가 열렸는가?
 
-
     [Header("UI Info")]
     [SerializeField] private Text interactText; // [E] UI SetActive(True, False)
+    #endregion
 
+    #region Function's
     private void Awake()
     {
         //closeKeyPadUI += KeyPadUIClose;
@@ -116,4 +118,5 @@ public class PickUpItem : MonoBehaviour
 
         else interactText.gameObject.SetActive(false);
     }
+    #endregion
 }

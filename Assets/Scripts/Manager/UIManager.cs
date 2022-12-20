@@ -7,13 +7,16 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
+    #region Variable
     public static UIManager instance = null;
 
     [HideInInspector] public static Action closeKeyPadUI;
     [SerializeField] private GameObject OptionUI;
     private bool isOptionUIOpen = false;
     private int ExitUIIndex = 0;
+    #endregion
 
+    #region Function's
     public static UIManager GetInstance()
     {
         return instance;
@@ -57,6 +60,9 @@ public class UIManager : MonoBehaviour
             }
         }
     }
+    #endregion
+
+    #region Close UI's
 
     void ScrollClose()
     {
@@ -110,4 +116,6 @@ public class UIManager : MonoBehaviour
         if(!isOptionUIOpen)
         IsExitUIClose(3);
     }
+
+    #endregion
 }

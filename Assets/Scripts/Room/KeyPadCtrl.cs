@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class KeyPadCtrl : MonoBehaviour
 {
+    #region Variable
     [HideInInspector] public static bool isPasswordAccess;
 
     [Header("Sound Info")]
@@ -17,7 +18,9 @@ public class KeyPadCtrl : MonoBehaviour
     [Header("KeyPad Info")]
     private string password;
     private int numIndex;
+    #endregion
 
+    #region Function's
     public void KeyPadInput(string numbers)
     {
         if(numIndex < 4)
@@ -49,4 +52,5 @@ public class KeyPadCtrl : MonoBehaviour
         password = null;
         keypadText.text = password;
     }
+    #endregion
 }
