@@ -1390,6 +1390,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   OptionUI: {fileID: 1651493592}
+  isOptionUIOpen: 0
 --- !u!1 &749846627
 GameObject:
   m_ObjectHideFlags: 0
@@ -1533,13 +1534,13 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 1641013938, guid: bbb1ec4bbf9e32842b9098c4fbd20be2, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
-  m_UseSpriteMesh: 0
+  m_UseSpriteMesh: 1
   m_PixelsPerUnitMultiplier: 1
 --- !u!222 &793136965
 CanvasRenderer:
@@ -3701,6 +3702,10 @@ PrefabInstance:
       propertyPath: KeyPadUI
       value: 
       objectReference: {fileID: 655546931}
+    - target: {fileID: 6880404607631926840, guid: d28bba2ca9f1f08489fb3c4fef09216c, type: 3}
+      propertyPath: OptionUI
+      value: 
+      objectReference: {fileID: 1651493592}
     - target: {fileID: 6880404607631926840, guid: d28bba2ca9f1f08489fb3c4fef09216c, type: 3}
       propertyPath: Scroll_PuzzleUI
       value: 

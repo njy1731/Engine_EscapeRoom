@@ -34,7 +34,7 @@ public class KeyPadCtrl : MonoBehaviour
         {
             isPasswordAccess = true;
             DeleteKeyPadNum();
-            PickUpItem.closeKeyPadUI();
+            UIManager.closeKeyPadUI();
         }
 
         else
