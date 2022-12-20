@@ -296,7 +296,7 @@ GameObject:
   - component: {fileID: 152235988}
   - component: {fileID: 152235987}
   m_Layer: 6
-  m_Name: HPEffect
+  m_Name: LowHPEffect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
