@@ -27,6 +27,6 @@ public class elevatorPanelCtrl : MonoBehaviour, WorkFurniture
     
     void ChangeScene()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene("jhj");
     }
 }

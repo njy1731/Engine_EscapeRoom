@@ -54,7 +54,7 @@ MonoBehaviour:
   target: {x: 0, y: 0, z: 0}
   Speed: 0.3
   playerPos: {x: 0, y: 0, z: 0}
-  damage: 100
+  damage: 40
 --- !u!65 &3956828815921757193
 BoxCollider:
   m_ObjectHideFlags: 0
