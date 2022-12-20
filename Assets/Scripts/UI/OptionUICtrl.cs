@@ -47,6 +47,7 @@ public class OptionUICtrl : MonoBehaviour
         Time.timeScale = 1;
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+        //UIManager.GetInstance().isOptionUIOpen = false;
     }
 
     public void ResetButtonDown()

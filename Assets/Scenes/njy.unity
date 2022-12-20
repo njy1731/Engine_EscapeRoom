@@ -1390,7 +1390,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   OptionUI: {fileID: 1651493592}
-  isOptionUIOpen: 0
 --- !u!1 &749846627
 GameObject:
   m_ObjectHideFlags: 0

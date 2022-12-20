@@ -12,7 +12,6 @@ public class UIManager : MonoBehaviour
 
     [HideInInspector] public static Action closeKeyPadUI;
     [SerializeField] private GameObject OptionUI;
-    private bool isOptionUIOpen = false;
     private int ExitUIIndex = 0;
     #endregion
 
@@ -36,9 +35,7 @@ public class UIManager : MonoBehaviour
 
     private void Update()
     {
-        HintScrollUIClose();
-        KeyPadUIClose();
-        OnOptionUIOpenKeyDown();
+        OnUIClose();
     }
 
     public void IsExitUIClose(int num)
@@ -55,7 +52,7 @@ public class UIManager : MonoBehaviour
                     KeyPadClose();
                     break;
                 case 3:
-                    OptionClose();
+                    OptionOpen();
                     break;
             }
         }
@@ -81,40 +78,24 @@ public class UIManager : MonoBehaviour
         PickUpItem.GetInstance().isKeyPad = false;
     }
 
-    void OptionClose()
+    void OptionOpen()
     {
         OptionUI.SetActive(true);
         Time.timeScale = 0;
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
-        isOptionUIOpen = true;
     }
 
     /// <summary>
-    /// 스크롤 UI를 닫는 함수
+    /// UI가 닫히는 버튼의 구분을 해주는 함수
     /// </summary>
-    void HintScrollUIClose()
+    void OnUIClose()
     {
-        if (PickUpItem.GetInstance().isScroll)
-            IsExitUIClose(1);
-    }
+        if (PickUpItem.GetInstance().isScroll) IsExitUIClose(1);
 
-    /// <summary>
-    /// KeyPad UI를 닫는 함수
-    /// </summary>
-    void KeyPadUIClose()
-    {
-        if (PickUpItem.GetInstance().isKeyPad)
-            IsExitUIClose(2);
-    }
+        else if (PickUpItem.GetInstance().isKeyPad) IsExitUIClose(2);
 
-    /// <summary>
-    /// Option UI를 보여주는 함수
-    /// </summary>
-    void OnOptionUIOpenKeyDown()
-    {
-        if(!isOptionUIOpen)
-        IsExitUIClose(3);
+        else IsExitUIClose(3);
     }
 
     #endregion

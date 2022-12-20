@@ -102,6 +102,7 @@ public class PickUpItem : MonoBehaviour
                     isScroll = true;
                     Scroll_PuzzleUI.SetActive(true);
                     CroosHair.SetActive(false);
+                    //UIManager.GetInstance().isOptionUIOpen = true;
                 }
 
                 if (hit.collider.CompareTag("KeyPad"))
@@ -112,6 +113,7 @@ public class PickUpItem : MonoBehaviour
                     isKeyPad = true;
                     KeyPadUI.SetActive(true);
                     CroosHair.SetActive(false);
+                    //UIManager.GetInstance().isOptionUIOpen = true;
                 }
             }
         }
