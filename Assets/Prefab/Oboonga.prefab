@@ -52,9 +52,9 @@ MonoBehaviour:
   Player: {fileID: 0}
   Light: []
   target: {x: 0, y: 0, z: 0}
-  Speed: 0.3
+  Speed: 0.1
   playerPos: {x: 0, y: 0, z: 0}
-  damage: 40
+  damage: 100
 --- !u!65 &3956828815921757193
 BoxCollider:
   m_ObjectHideFlags: 0

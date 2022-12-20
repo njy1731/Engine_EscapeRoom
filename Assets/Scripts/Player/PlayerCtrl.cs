@@ -8,6 +8,7 @@ public class PlayerCtrl : MonoBehaviour
 {
     [Header("Player Sound Info")]
     [SerializeField] private AudioSource footstepSound; //플레이어 발소리
+    [SerializeField] private GameObject BGM;
 
     [Header("Player Info")]
     [SerializeField] private GameObject playerHitBox; //플레이어 피격범위
@@ -179,8 +180,9 @@ public class PlayerCtrl : MonoBehaviour
         glitchEffect.intensity = 1f;
         glitchEffect.colorIntensity = 1f;
         healthBar.SetActive(false);
-        StartCoroutine(cameraShake.Shake());
+        BGM.SetActive(false);
         gameoverCutscene.SetActive(true);
+        StartCoroutine(cameraShake.Shake());
     }
 
     private void hitboxOn()

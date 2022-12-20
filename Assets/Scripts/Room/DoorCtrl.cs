@@ -5,7 +5,7 @@ using UnityEngine;
 public class DoorCtrl : MonoBehaviour
 {
     [SerializeField] private Animator DoorAni;
-
+    
     void Update()
     {
         KeyPadAccessed();
@@ -19,4 +19,6 @@ public class DoorCtrl : MonoBehaviour
             KeyPadCtrl.isPasswordAccess = false;
         }
     }
+
+        
 }

@@ -6,9 +6,6 @@ public class RandomRoomScript : MonoBehaviour
 {
     public GameObject[] rooms;
     public Vector3 spawnPos;
-    GameObject[] BigRooms;
-    GameObject[] NormalRooms;
-    GameObject[] ArtRooms;
     private bool roomSpawned = false;
 
     
