@@ -14,36 +14,47 @@ public interface WorkFurniture
 
 public class PickUpItem : MonoBehaviour
 {
-    [HideInInspector] public static Action closeKeyPadUI;
+    #region Variable
+    private static PickUpItem instance;
+    public static PickUpItem GetInstance() { return instance; }
+
+    [SerializeField] private GameObject OptionUI;
 
     [Header("Layer Info")]
     [SerializeField] private LayerMask itemLayer; //아이템 구별
     [SerializeField] private LayerMask furnitureLayer; //가구 구별
 
     [Header("PickUp, Open Info")]
-    [SerializeField] private float interactRange = 2.0f; //상호작용 거리
+    [SerializeField] public float interactRange = 2.0f; //상호작용 거리
     [SerializeField] private GameObject Key = null; //아이템을 먹을때 SetActive 시켜주기위한 변수
-    [SerializeField] private GameObject Scroll_PuzzleUI = null; //퍼즐의 힌트 UI
-    [SerializeField] private GameObject KeyPadUI = null; //비밀번호 입력을하는 KeyPad UI
-    [SerializeField] private GameObject CroosHair = null; //플레이어의 조준선
+    [SerializeField] public GameObject Scroll_PuzzleUI = null; //퍼즐의 힌트 UI
+    [SerializeField] public GameObject KeyPadUI = null; //비밀번호 입력을하는 KeyPad UI
+    [SerializeField] public GameObject CroosHair = null; //플레이어의 조준선
 
     [Header("Bool Info")]
     public bool ItemHeld = false; //아이템을 들고있는가?
-    private bool isScroll = false; //스크롤 아이템을 먹었는가?
-    private bool isKeyPad = false; //KeyPad UI가 열렸는가?
+    public bool isScroll = false; //스크롤 아이템을 먹었는가?
+    public bool isKeyPad = false; //KeyPad UI가 열렸는가?
 
     [Header("UI Info")]
     [SerializeField] private Text interactText; // [E] UI SetActive(True, False)
+    #endregion
 
+    #region Function's
     private void Awake()
     {
-        closeKeyPadUI += KeyPadUIClose;
+        //closeKeyPadUI += KeyPadUIClose;
+
+        if (instance == null)
+        {
+            instance = this;
+        }
+
+        else Destroy(gameObject);
     }
 
     private void Update()
     {
-        HintScrollUIClose();
-        KeyPadUIClose();
         PickUpItem_();
         WorkFurniture();
         Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward), Color.red);
@@ -107,39 +118,5 @@ public class PickUpItem : MonoBehaviour
 
         else interactText.gameObject.SetActive(false);
     }
-
-    /// <summary>
-    /// 스크롤 UI를 닫는 함수
-    /// </summary>
-    void HintScrollUIClose()
-    {
-        if (isScroll)
-        {
-            if (Input.GetKeyDown(KeyCode.Escape))
-            {
-                isScroll = false;
-                Scroll_PuzzleUI.SetActive(false);
-                CroosHair.SetActive(true);
-            }
-        }
-    }
-
-    /// <summary>
-    /// KeyPad UI를 닫는 함수
-    /// </summary>
-    void KeyPadUIClose()
-    {
-        if (isKeyPad)
-        {
-            if (Input.GetKeyDown(KeyCode.Escape) || KeyPadCtrl.isPasswordAccess == true)
-            {
-                Time.timeScale = 1;
-                Cursor.lockState = CursorLockMode.Locked;
-                Cursor.visible = false;
-                isKeyPad = false;
-                KeyPadUI.SetActive(false);
-                CroosHair.SetActive(true);
-            }
-        }
-    }
+    #endregion
 }

@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class OptionUICtrl : MonoBehaviour
 {
+    #region Variable
     [Header("Object")]
     [SerializeField] private GameObject OptionUI;
     [SerializeField] private GameObject ResetUI;
@@ -25,7 +26,9 @@ public class OptionUICtrl : MonoBehaviour
     [Header("Value")]
     private float defaultVolume = 1.0f;
     private float defaultSens = 100f;
+    #endregion
 
+    #region Function's
     public void SetVolume(float volume)
     {
         AudioListener.volume = volume;
@@ -72,5 +75,6 @@ public class OptionUICtrl : MonoBehaviour
         ResetButton.interactable = true;
         ResumeButton.interactable = true;
     }
+    #endregion
 }
 
