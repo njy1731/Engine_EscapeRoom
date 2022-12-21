@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class deathSceneCtrl : MonoBehaviour
 {
@@ -18,7 +19,7 @@ public class deathSceneCtrl : MonoBehaviour
         Invoke("FirstStep", 1.3f);
         Invoke("SecondStep", 1.35f);
         Invoke("ThirdStep", 1.4f);
-
+        Invoke("ChangeScene", 3f);
     }
 
     // Update is called once per frame
@@ -46,5 +47,9 @@ public class deathSceneCtrl : MonoBehaviour
     {
         enemyImage.gameObject.SetActive(false);
         enemyScaryImage.gameObject.SetActive(true);
+    }
+    void ChangeScene()
+    {
+        SceneManager.LoadScene("GameOverScene");
     }
 }
