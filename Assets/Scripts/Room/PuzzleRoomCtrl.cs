@@ -15,6 +15,7 @@ public class PuzzleRoomCtrl : MonoBehaviour
     void Awake()
     {
         RandomPassword();
+        Debug.Log(password_str);
     }
 
     /// <summary>
@@ -29,7 +30,7 @@ public class PuzzleRoomCtrl : MonoBehaviour
             password_str += numbers[i].ToString();
             TextPrefab[i].text += randomSign[i].ToString();
         }
-
+        
         KeyPadCtrl.hideRoomDictionary.Add(password_str, this.GetComponentInParent<HideRoom>());
     }
 

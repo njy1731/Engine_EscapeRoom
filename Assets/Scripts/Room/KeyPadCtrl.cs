@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class KeyPadCtrl : MonoBehaviour
 {
     #region Variable
-    [HideInInspector] public static bool isPasswordAccess;
+    [HideInInspector] public static bool isPasswordAccess = false;
 
     [Header("Sound Info")]
     [SerializeField] private AudioSource KeyPadFaild;
@@ -30,32 +30,18 @@ public class KeyPadCtrl : MonoBehaviour
             numIndex++;
             password += numbers;
             keypadText.text = password;
-            Debug.Log("A");
         }
     }
-
-    //public void EnterKeyPad()
-    //{
-    //    //if(password == PuzzleRoomCtrl.password_str)
-    //    //{
-    //    //    isPasswordAccess = true;
-    //    //    DeleteKeyPadNum();
-    //    //    UIManager.closeKeyPadUI();
-    //    //}
-    //    //else
-    //    //{
-    //    //    KeyPadFaild.Play();
-    //    //}
-    //}
-
     public void EnterKeyPad()
     {
         if(hideRoomDictionary.ContainsKey(password))
         {
+            isPasswordAccess = true;
             hideRoomDictionary[password].OpenDoor();
             DeleteKeyPadNum();
             UIManager.closeKeyPadUI();
         }
+
         else
         {
             KeyPadFaild.Play();

@@ -17,6 +17,7 @@ public class KeyPad : MonoBehaviour
         if (KeyPadCtrl.isPasswordAccess)
         {
             access.Play();
+            KeyPadCtrl.isPasswordAccess = false;
         }
     }
 }

@@ -3370,6 +3370,10 @@ PrefabInstance:
       propertyPath: m_Volume
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 2258256288990708528, guid: f72fe264f486bff4e9a85edc24a1703a, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2258256288990708530, guid: f72fe264f486bff4e9a85edc24a1703a, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
