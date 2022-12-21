@@ -18,10 +18,10 @@ public class CameraShake : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.F))
-        {
-            StartCoroutine(Shake());
-        }
+        //if(Input.GetKeyDown(KeyCode.F))
+        //{
+        //    StartCoroutine(Shake());
+        //}
     }
 
     public IEnumerator Shake()
