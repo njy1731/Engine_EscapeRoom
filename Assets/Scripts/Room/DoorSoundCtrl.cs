@@ -13,6 +13,6 @@ public class DoorSoundCtrl : MonoBehaviour
 
     public void OpenSoundPlay()
     {
-        audioSource.PlayOneShot(OpenSound, 0.7f);
+        audioSource.PlayOneShot(OpenSound, 0.3f);
     }
 }

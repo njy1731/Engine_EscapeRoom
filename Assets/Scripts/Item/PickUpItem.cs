@@ -16,7 +16,7 @@ public class PickUpItem : MonoBehaviour
 {
     #region Variable
     private static PickUpItem instance;
-    public static PickUpItem GetInstance() { return instance; }
+    public static PickUpItem GetInstance() => instance;
 
     [SerializeField] private GameObject OptionUI;
 

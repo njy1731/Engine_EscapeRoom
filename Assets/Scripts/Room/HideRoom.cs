@@ -26,7 +26,6 @@ public class HideRoom : MonoBehaviour
         _door.OpenDoor();
     }
 
-
     void Update()
     {
 
