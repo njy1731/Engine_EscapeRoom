@@ -18,7 +18,7 @@ public class KeySpawnCtrl : MonoBehaviour
             int point = Random.Range(0, spawnpoint.Length);
             GameObject key = Instantiate(keyPrefab);
             key.transform.SetParent(spawnpoint[point].transform);
-            key.transform.localPosition = Vector3.zero; 
+            key.transform.localPosition = new Vector3(0, 0, 0);
             // keyPrefab.transform.position = spawnpoint[point].transform.position;
             isItemSpawned = true;
         }
