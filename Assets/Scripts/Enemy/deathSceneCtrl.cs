@@ -50,6 +50,8 @@ public class deathSceneCtrl : MonoBehaviour
     }
     void ChangeScene()
     {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
         SceneManager.LoadScene("GameOverScene");
     }
 }

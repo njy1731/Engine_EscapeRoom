@@ -9,6 +9,5 @@ public class DoorCtrl : MonoBehaviour
     public void OpenDoor()
     {
         DoorAni.Play("DoorOpen");
-        //KeyPadCtrl.isPasswordAccess = false;
     }  
 }
