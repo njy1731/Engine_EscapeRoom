@@ -29,6 +29,12 @@ public class OptionUICtrl : MonoBehaviour
     #endregion
 
     #region Function's
+
+    private void Awake()
+    {
+        DontDestroyOnLoad(this.gameObject);
+    }
+
     public void SetVolume(float volume)
     {
         AudioListener.volume = volume;

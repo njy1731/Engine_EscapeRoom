@@ -9,7 +9,7 @@ public class FlashLightCtrl : MonoBehaviour
 
     void Start()
     {
-        //FlashLight.SetActive(true);
+        FlashLight.SetActive(true);
     }
 
     void Update()
