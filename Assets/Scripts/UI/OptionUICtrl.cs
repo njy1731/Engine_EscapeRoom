@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class OptionUICtrl : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class OptionUICtrl : MonoBehaviour
     [Header("Button")]
     [SerializeField] private Button ResetButton;
     [SerializeField] private Button ResumeButton;
+    [SerializeField] private Button MenuButton;
 
     [Header("Slider")]
     [SerializeField] private Slider VolumeSlider;
@@ -55,7 +57,11 @@ public class OptionUICtrl : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         //UIManager.GetInstance().isOptionUIOpen = false;
     }
-
+    public void MenuButtonDown()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene("GameStartScene");
+    }
     public void ResetButtonDown()
     {
         ResetUI.SetActive(true);
@@ -74,6 +80,7 @@ public class OptionUICtrl : MonoBehaviour
         ResetUI.SetActive(false);
         ResetButton.interactable = true;
         ResumeButton.interactable = true;
+        MenuButton.interactable = true;
     }
 
     public void ResetUI_BackButtonDown()
@@ -81,6 +88,7 @@ public class OptionUICtrl : MonoBehaviour
         ResetUI.SetActive(false);
         ResetButton.interactable = true;
         ResumeButton.interactable = true;
+        MenuButton.interactable = true;
     }
     #endregion
 }

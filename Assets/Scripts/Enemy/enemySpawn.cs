@@ -10,7 +10,7 @@ public class enemySpawn : MonoBehaviour
     private float firstWaitTime;
     private float currTime;
     [SerializeField]
-    private float enemySpawnTime = 60f;
+    private float enemySpawnTime = 30f;
     [SerializeField]
     private bool enemySpawned = false;
     public GameObject enemy;
@@ -39,7 +39,7 @@ public class enemySpawn : MonoBehaviour
             currTime += Time.deltaTime;
             if (currTime > waitTime)
             {
-                int spawnRate = Random.Range(0, 8);
+                int spawnRate = Random.Range(0, 5);
                 Debug.Log(",");
 
                 if (spawnRate == 0)
