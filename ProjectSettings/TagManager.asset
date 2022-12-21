@@ -20,6 +20,10 @@ TagManager:
   - BigRoom
   - ArtRoom
   - NormalRoom
+  - elevatorDoor
+  - EndRoom
+  - endRoomElevatorDoor1
+  - endRoomElevatorDoor2
   layers:
   - Default
   - TransparentFX
