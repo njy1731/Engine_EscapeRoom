@@ -16,8 +16,10 @@ public class KeySpawnCtrl : MonoBehaviour
         if (!isItemSpawned)
         {
             int point = Random.Range(0, spawnpoint.Length);
-            Instantiate(keyPrefab);
-            keyPrefab.transform.position = spawnpoint[point].transform.position;
+            GameObject key = Instantiate(keyPrefab);
+            key.transform.SetParent(spawnpoint[point].transform);
+            key.transform.localPosition = Vector3.zero; 
+            // keyPrefab.transform.position = spawnpoint[point].transform.position;
             isItemSpawned = true;
         }
     }

@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class StartUICtrl : MonoBehaviour
 {
-
     [Header("UI")]
     [SerializeField] private GameObject UserGuideUI;
     [SerializeField] private GameObject StartUI;

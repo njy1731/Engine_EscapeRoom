@@ -94,6 +94,7 @@ public class PickUpItem : MonoBehaviour
                 if (hit.collider.CompareTag("Key"))
                 {
                     Key.SetActive(true);
+                    Key.GetComponent<Rigidbody>().useGravity = false;
                     Destroy(hit.collider.gameObject);
                 }
 
