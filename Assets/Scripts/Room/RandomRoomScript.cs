@@ -7,17 +7,11 @@ public class RandomRoomScript : MonoBehaviour
     public GameObject[] rooms;
     public Vector3 spawnPos;
     private bool roomSpawned = false;
-
     
     void Start()
     {
         spawnPos = this.gameObject.transform.position;
         SpawnRoom();
-        
-    }
-
-    void Update()
-    {
         
     }
 
