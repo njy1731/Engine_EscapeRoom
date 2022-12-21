@@ -10,6 +10,7 @@ public class FlashLightCtrl : MonoBehaviour
     void Start()
     {
         FlashLight.SetActive(true);
+        isFlash = true;
     }
 
     void Update()
